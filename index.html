@@ -97,6 +97,13 @@
             display: block;
         }
 
+        .separator-g {
+            display: flex;
+            justify-content: center;
+            padding: 80px 0;
+            opacity: 0.3;
+        }
+
         .weight-black { font-weight: 900; }
         .weight-extrabold { font-weight: 800; }
         .weight-semibold { font-weight: 600; }
@@ -159,7 +166,7 @@
         
         <!-- Section 1: The Origin of Bias -->
         <section id="science" class="py-24">
-            <div class="grid lg:grid-cols-12 gap-20">
+            <div class="grid lg:grid-cols-12 gap-20 mb-32">
                 <div class="lg:col-span-6">
                     <h2 class="text-xs weight-bold text-gravity-lime tracking-[0.3em] uppercase mb-4">The Efficiency Gap</h2>
                     <h3 class="text-5xl weight-black text-gravity-navy mb-8 leading-tight font-heading uppercase">The Cognitive Miser</h3>
@@ -182,11 +189,61 @@
                         <div class="text-center py-6 bg-slate-50 rounded-xl mb-4">
                             <span class="text-4xl weight-black text-red-500 uppercase">BLUE</span>
                         </div>
-                        <p class="text-[11px] text-slate-400">Discussion: Your System 1 read the word automatically. Your System 2 had to work to identify the color. Interviewing is the same—gut feelings are automatic; logic requires work.</p>
+                        <p class="text-[11px] text-slate-400 mb-6">Discussion: Your System 1 read the word automatically. Your System 2 had to work to identify the color. Interviewing is the same—gut feelings are automatic; logic requires work.</p>
+                        
+                        <!-- Added 10 Seconds Research -->
+                        <div class="pt-6 border-t border-slate-100">
+                            <p class="text-xs weight-bold text-gravity-navy uppercase tracking-widest mb-2">The 10-Second Danger</p>
+                            <p class="text-sm text-slate-500">Research shows interviewers often make a hiring decision within the <strong>first 10 seconds</strong>. The remaining time is spent searching for evidence to confirm that initial bias.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 95/5 Visual Section with Zaltman Citation -->
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-10">
+                    <h3 class="text-3xl weight-black text-gravity-navy font-heading uppercase tracking-tight">The Unconscious Operating System</h3>
+                    <p class="text-slate-500 mt-3 max-w-2xl mx-auto">Neuroscience suggests that up to 95% of our decisions are driven by subconscious patterns, not conscious logic.</p>
+                    <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Source: Dr. Gerald Zaltman, Harvard University</p>
+                </div>
+
+                <div class="relative w-full h-40 bg-slate-100 rounded-2xl overflow-hidden flex shadow-lg border border-slate-200">
+                    <!-- 95% Bar -->
+                    <div class="h-full bg-gravity-navy flex flex-col justify-center items-center text-white relative group transition-all duration-500 hover:bg-opacity-95" style="width: 95%">
+                        <span class="weight-black text-5xl md:text-7xl tracking-tighter opacity-10 group-hover:opacity-20 transition-opacity select-none">95%</span>
+                        <span class="text-xs uppercase tracking-[0.3em] opacity-40 absolute bottom-6 font-heading">Bias / Intuition / Autopilot</span>
+                    </div>
+                    
+                    <!-- 5% Bar -->
+                    <div class="h-full bg-gravity-lime relative flex items-center justify-center transition-all duration-500 hover:brightness-110" style="width: 5%">
+                        <!-- Pulse animation to draw eye -->
+                        <div class="absolute inset-0 bg-white opacity-20 animate-pulse"></div>
+                    </div>
+                </div>
+
+                <div class="flex justify-end mt-6 relative">
+                    <!-- Connector Line -->
+                    <div class="absolute -top-6 right-[2.5%] w-0.5 h-12 bg-gravity-lime"></div>
+                    
+                    <!-- The Note -->
+                    <div class="w-72 text-right pt-2">
+                        <p class="text-gravity-lime weight-black text-2xl leading-none mb-2 font-heading uppercase">5% Conscious</p>
+                        <p class="text-sm text-slate-600 leading-relaxed border-r-4 border-gravity-lime pr-4">
+                            This is the <strong>Objective Zone</strong>. This is where accurate, evidence-based hiring decisions happen. We have to fight to stay here.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Topic Separator -->
+        <div class="separator-g">
+            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 15C30.67 15 15 30.67 15 50C15 69.33 30.67 85 50 85C69.33 85 85 69.33 85 50" stroke="#91C73D" stroke-width="12" stroke-linecap="round"/>
+                <text x="38" y="65" fill="#253750" style="font-family: Montserrat; font-weight: 900; font-size: 40px;">g</text>
+            </svg>
+        </div>
 
         <!-- Section 2: Anatomy of Bias -->
         <section id="anatomy" class="py-24">
@@ -227,6 +284,14 @@
                 </div>
             </div>
         </section>
+
+        <!-- Topic Separator -->
+        <div class="separator-g">
+            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 15C30.67 15 15 30.67 15 50C15 69.33 30.67 85 50 85C69.33 85 85 69.33 85 50" stroke="#91C73D" stroke-width="12" stroke-linecap="round"/>
+                <text x="38" y="65" fill="#253750" style="font-family: Montserrat; font-weight: 900; font-size: 40px;">g</text>
+            </svg>
+        </div>
 
         <!-- Section 3: Review of Biases -->
         <section id="biases" class="py-24">
