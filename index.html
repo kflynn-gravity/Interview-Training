@@ -101,7 +101,7 @@
             display: flex;
             justify-content: center;
             padding: 80px 0;
-            opacity: 0.3;
+            opacity: 0.3; /* Makes the little logo subtle */
         }
 
         .weight-black { font-weight: 900; }
@@ -114,10 +114,11 @@
     <div id="progress" class="progress-bar" style="width: 0%"></div>
 
     <!-- Navigation -->
-    <nav class="sticky-nav sticky top-0 z-50 border-b border-slate-100 py-6 px-8">
+    <nav class="sticky-nav sticky top-0 z-50 border-b border-slate-100 py-4 px-8">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="weight-black text-2xl tracking-tighter text-gravity-navy uppercase font-heading">
-                Internal Training
+                <!-- Main Logo Here -->
+                <img src="mainlogo.png" alt="Gravity Payments" class="h-10 w-auto">
             </div>
             <div class="hidden md:flex gap-10 text-[11px] weight-extrabold uppercase tracking-widest text-slate-400">
                 <a href="#objectives" class="hover:text-gravity-lime transition-colors">Objectives</a>
@@ -237,12 +238,9 @@
             </div>
         </section>
 
-        <!-- Topic Separator -->
+        <!-- Topic Separator: Little Logo -->
         <div class="separator-g">
-            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M50 15C30.67 15 15 30.67 15 50C15 69.33 30.67 85 50 85C69.33 85 85 69.33 85 50" stroke="#91C73D" stroke-width="12" stroke-linecap="round"/>
-                <text x="38" y="65" fill="#253750" style="font-family: Montserrat; font-weight: 900; font-size: 40px;">g</text>
-            </svg>
+            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50">
         </div>
 
         <!-- Section 2: Anatomy of Bias -->
@@ -285,12 +283,9 @@
             </div>
         </section>
 
-        <!-- Topic Separator -->
+        <!-- Topic Separator: Little Logo -->
         <div class="separator-g">
-            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M50 15C30.67 15 15 30.67 15 50C15 69.33 30.67 85 50 85C69.33 85 85 69.33 85 50" stroke="#91C73D" stroke-width="12" stroke-linecap="round"/>
-                <text x="38" y="65" fill="#253750" style="font-family: Montserrat; font-weight: 900; font-size: 40px;">g</text>
-            </svg>
+            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50">
         </div>
 
         <!-- Section 3: Review of Biases -->
@@ -333,6 +328,11 @@
             </div>
         </section>
 
+        <!-- Topic Separator: Little Logo -->
+        <div class="separator-g">
+            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50">
+        </div>
+
         <!-- Section 4: The Exposure Audit -->
         <section id="exposure" class="py-24 border-b border-slate-100">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -359,6 +359,11 @@
                 </div>
             </div>
         </section>
+
+        <!-- Topic Separator: Little Logo -->
+        <div class="separator-g">
+            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50">
+        </div>
 
         <!-- Section 5: Corporate Audit -->
         <section id="audit" class="py-24 border-b border-slate-100">
@@ -387,6 +392,11 @@
                 </div>
             </div>
         </section>
+
+        <!-- Topic Separator: Little Logo -->
+        <div class="separator-g">
+            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50">
+        </div>
 
         <!-- Section 6: Soft Skills & Competencies -->
         <section id="softskills" class="py-32">
@@ -437,8 +447,7 @@
                     You <strong>should not</strong> give a score based on a "feeling." Feelings are just Hippocampus associations trying to bypass the Prefrontal Cortex. Every rating must be backed by a direct quote or a specific behavior observed.
                 </p>
                 <div class="bg-white p-10 rounded-2xl text-center italic text-gravity-navy weight-medium border border-slate-200">
-                    <p class="text-lg mb-2">In other words...</p>
-                    <p class="text-3xl weight-black leading-tight">"If you can't point to a specific sentence they said, the score belongs to your bias, not the candidate."</p>
+                    <p class="text-3xl weight-black leading-tight">"Ambiguity invites bias. Specificity ensures fairness."</p>
                 </div>
             </div>
 
