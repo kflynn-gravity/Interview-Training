@@ -160,7 +160,7 @@
     <nav class="sticky-nav sticky top-0 z-50 border-b border-slate-100 py-4 px-8">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="weight-black text-2xl tracking-tighter text-gravity-navy uppercase font-heading">
-                <img src="mainlogo.png" alt="Gravity Payments" class="h-10 w-auto" onerror="this.src='https://gravitypayments.com/wp-content/uploads/2021/03/Gravity_Logo_Horizontal_GreenNavy-1.png'">
+                <img src="https://gravitypayments.com/wp-content/uploads/2021/03/Gravity_Logo_Horizontal_GreenNavy-1.png" alt="Gravity Payments" class="h-10 w-auto">
             </div>
             <div class="hidden md:flex gap-10 text-[11px] weight-extrabold uppercase tracking-widest text-slate-400">
                 <a href="#objectives" class="hover:text-gravity-lime transition-colors">Objectives</a>
@@ -221,7 +221,7 @@
 
                 <div id="game-play" class="hidden-game max-w-lg mx-auto">
                     <div class="mb-4 text-xs weight-bold text-slate-400 uppercase tracking-widest">
-                        Prompt <span id="current-card-num">1</span> of 5
+                        Prompt <span id="current-card-num">1</span> of 7
                     </div>
                     <div class="game-container">
                         <div id="main-card" class="game-card" onclick="flipCard()">
@@ -241,11 +241,15 @@
 
                 <div id="game-conclusion" class="hidden-game max-w-2xl mx-auto">
                     <h3 class="text-3xl weight-black text-gravity-navy mb-4 font-heading uppercase">The Power of Association</h3>
-                    <p class="text-slate-600 mb-6 leading-relaxed">
-                        These fast reactions show how <strong>Cultural Schemas</strong> create "default" answers. We may share the same association, or we may differ based on our background.
+                    <p class="text-slate-600 mb-6 leading-relaxed text-sm">
+                        These fast reactions show how <strong>Cultural Schemas</strong> create "default" answers. 
+                        We might share the same association for "Thunder," but answers for "Breakfast" or "Sport" start to diverge wildly based on our personal background.
                     </p>
                     <div class="bg-white p-6 rounded-2xl border border-slate-200 text-left mb-8">
-                        <p class="text-sm text-slate-500"><strong class="text-gravity-navy">The takeaway:</strong> Bias happens when we judge a candidate based on whether they match our specific "associations" (the gut feeling) rather than their actual performance data.</p>
+                        <p class="text-sm text-slate-500 leading-relaxed">
+                            <strong class="text-gravity-navy block mb-2 uppercase tracking-widest text-[10px]">Contextual Barriers in Action:</strong> 
+                            Even simple questions carry assumptions. "For breakfast I have ____" assumes a candidate eats breakfast. "My favorite sport is ____" assumes they follow sports. When we ask "vibe" questions in interviews, we are accidentally testing for shared lifestyle rather than role capability.
+                        </p>
                     </div>
                     <button onclick="resetGame()" class="text-xs weight-bold text-gravity-lime uppercase tracking-widest underline underline-offset-4">Restart Game</button>
                 </div>
@@ -279,7 +283,6 @@
                         </div>
                         <p class="text-[11px] text-slate-400 mb-6">Discussion: Your System 1 read the word automatically. Your System 2 had to work to identify the color. Interviewing is the same—gut feelings are automatic; logic requires work.</p>
                         
-                        <!-- Added 10 Seconds Research -->
                         <div class="pt-6 border-t border-slate-100">
                             <p class="text-xs weight-bold text-gravity-navy uppercase tracking-widest mb-2">The 10-Second Danger</p>
                             <p class="text-sm text-slate-500">Research shows interviewers often make a hiring decision within the <strong>first 10 seconds</strong>. The remaining time is spent searching for evidence to confirm that initial bias.</p>
@@ -288,7 +291,6 @@
                 </div>
             </div>
 
-            <!-- 95/5 Visual Section with Zaltman Citation -->
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-10">
                     <h3 class="text-3xl weight-black text-gravity-navy font-heading uppercase tracking-tight">The Unconscious Operating System</h3>
@@ -297,24 +299,17 @@
                 </div>
 
                 <div class="relative w-full h-40 bg-slate-100 rounded-2xl overflow-hidden flex shadow-lg border border-slate-200">
-                    <!-- 95% Bar -->
                     <div class="h-full bg-gravity-navy flex flex-col justify-center items-center text-white relative group transition-all duration-500 hover:bg-opacity-95" style="width: 95%">
                         <span class="weight-black text-5xl md:text-7xl tracking-tighter opacity-10 group-hover:opacity-20 transition-opacity select-none">95%</span>
                         <span class="text-xs uppercase tracking-[0.3em] opacity-40 absolute bottom-6 font-heading">Bias / Intuition / Autopilot</span>
                     </div>
-                    
-                    <!-- 5% Bar -->
                     <div class="h-full bg-gravity-lime relative flex items-center justify-center transition-all duration-500 hover:brightness-110" style="width: 5%">
-                        <!-- Pulse animation to draw eye -->
                         <div class="absolute inset-0 bg-white opacity-20 animate-pulse"></div>
                     </div>
                 </div>
 
                 <div class="flex justify-end mt-6 relative">
-                    <!-- Connector Line -->
                     <div class="absolute -top-6 right-[2.5%] w-0.5 h-12 bg-gravity-lime"></div>
-                    
-                    <!-- The Note -->
                     <div class="w-72 text-right pt-2">
                         <p class="text-gravity-lime weight-black text-2xl leading-none mb-2 font-heading uppercase">5% Conscious</p>
                         <p class="text-sm text-slate-600 leading-relaxed border-r-4 border-gravity-lime pr-4">
@@ -325,9 +320,9 @@
             </div>
         </section>
 
-        <!-- Topic Separator: Little Logo -->
+        <!-- Topic Separator -->
         <div class="separator-g">
-            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50" onerror="this.style.display='none'">
+            <div class="w-12 h-1 bg-gravity-lime opacity-20 rounded-full"></div>
         </div>
 
         <!-- Section 3: Anatomy of Bias -->
@@ -346,7 +341,6 @@
                     <h4 class="text-xl weight-black text-gravity-navy mb-2 font-heading uppercase">The Amygdala</h4>
                     <p class="text-xs weight-extrabold text-red-400 uppercase tracking-widest mb-6 font-heading">Instinctive Guard</p>
                     <p class="text-sm text-slate-600 mb-4">Triggers the <strong>"Amygdala Hijack."</strong> It reacts to difference as danger, often before the candidate even speaks.</p>
-                    <span class="citation">Source: Daniel Goleman, Emotional Intelligence</span>
                 </div>
 
                 <div class="bg-white p-10 rounded-[2.5rem] anatomy-card text-center overflow-hidden">
@@ -356,7 +350,6 @@
                     <h4 class="text-xl weight-black text-gravity-navy mb-2 font-heading uppercase">The Hippocampus</h4>
                     <p class="text-[10px] weight-extrabold text-gravity-navy uppercase tracking-widest mb-6 font-heading">Pattern Library</p>
                     <p class="text-sm text-slate-600 mb-4">Stores societal tropes and long-term memories. It creates the "data" that the Amygdala uses to judge "out-groups."</p>
-                    <span class="citation">Source: Banaji & Greenwald, Blindspot</span>
                 </div>
 
                 <div class="bg-white p-10 rounded-[2.5rem] anatomy-card text-center overflow-hidden">
@@ -365,15 +358,10 @@
                     </div>
                     <h4 class="text-xl weight-black text-gravity-navy mb-2 font-heading uppercase">Prefrontal Cortex</h4>
                     <p class="text-xs weight-extrabold text-gravity-lime uppercase tracking-widest mb-6 font-heading">The CEO</p>
-                    <p class="text-sm text-slate-600 mb-4">Enables <strong>Metacognition</strong>. This is the only part of the brain that can consciously override the Amygdala's initial "gut reaction."</p>
+                    <p class="text-sm text-slate-600 mb-4">Enables <strong>Metacognition</strong>. This is the only part of the brain that can override the Amygdala's initial "gut reaction."</p>
                 </div>
             </div>
         </section>
-
-        <!-- Topic Separator: Little Logo -->
-        <div class="separator-g">
-            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50" onerror="this.style.display='none'">
-        </div>
 
         <!-- Section 3: Review of Biases -->
         <section id="biases" class="py-24">
@@ -385,36 +373,24 @@
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
                 <div class="bias-card">
-                    <div class="text-gravity-lime mb-4">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                    </div>
                     <h4 class="text-lg weight-bold text-gravity-navy mb-2">Affinity Bias</h4>
                     <p class="text-xs text-slate-500">Gravitating toward people who share our background, interests, or personality.</p>
                 </div>
                 <div class="bias-card">
-                    <div class="text-gravity-lime mb-4">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
                     <h4 class="text-lg weight-bold text-gravity-navy mb-2">Confirmation Bias</h4>
                     <p class="text-xs text-slate-500">Forming an opinion in the first 30 seconds and only asking questions that prove it right.</p>
                 </div>
                 <div class="bias-card">
-                    <div class="text-gravity-lime mb-4">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
-                    </div>
                     <h4 class="text-lg weight-bold text-gravity-navy mb-2">Halo/Horn Effect</h4>
                     <p class="text-xs text-slate-500">Allowing one great (or terrible) trait to overshadow all other evidence.</p>
                 </div>
                 <div class="bias-card">
-                    <div class="text-gravity-lime mb-4">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
-                    </div>
                     <h4 class="text-lg weight-bold text-gravity-navy mb-2">Contrast Effect</h4>
-                    <p class="text-xs text-slate-500">Comparing candidates against the previous person interviewed, rather than the job standard.</p>
+                    <p class="text-xs text-slate-500">Comparing candidates against each other rather than the job standard.</p>
                 </div>
             </div>
 
-            <!-- New Section: Everyday Bias Traps -->
+            <!-- Everyday Bias Traps -->
             <div class="max-w-5xl mx-auto bg-slate-50 rounded-[3rem] p-12 border border-slate-200">
                 <div class="text-center mb-12">
                     <h3 class="text-3xl weight-black text-gravity-navy font-heading uppercase tracking-tight">Everyday Bias Traps</h3>
@@ -422,64 +398,41 @@
                 </div>
 
                 <div class="space-y-8">
-                    <!-- Trap 1 -->
                     <div class="flex flex-col md:flex-row gap-8 items-start border-b border-slate-200 pb-8">
-                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center shrink-0 text-red-500">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path></svg>
-                        </div>
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center shrink-0 text-red-500 font-bold">!</div>
                         <div>
                             <h4 class="text-xl weight-black text-gravity-navy mb-2 uppercase">"Making the Decision For Them"</h4>
-                            <p class="italic text-slate-600 mb-3">I don't think they'd be happy in this role long-term. They've managed teams before, so they'll get bored being an individual contributor.</p>
-                            <p class="text-xs text-slate-500 leading-relaxed"><strong class="text-gravity-lime uppercase tracking-wider">The Reality:</strong> You are rejecting them based on an assumption about their desires, not their actual stated motivation. You are hiring for <em>retention prediction</em> rather than <em>role capability</em>. Let the candidate decide what they want.</p>
+                            <p class="italic text-slate-600 mb-3">"I don't think they'd be happy in this role long-term. They've managed teams before, so they'll get bored."</p>
+                            <p class="text-xs text-slate-500 leading-relaxed"><strong class="text-gravity-lime uppercase tracking-wider">The Reality:</strong> You are rejecting them based on an assumption about their desires. Let the candidate decide what they want.</p>
                         </div>
                     </div>
-
-                    <!-- Trap 2 -->
                     <div class="flex flex-col md:flex-row gap-8 items-start border-b border-slate-200 pb-8">
-                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center shrink-0 text-red-500">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </div>
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center shrink-0 text-red-500 font-bold">!</div>
                         <div>
                             <h4 class="text-xl weight-black text-gravity-navy mb-2 uppercase">"The Mesh Fallacy"</h4>
-                            <p class="italic text-slate-600 mb-3">I just don't think they would mesh well with the team.</p>
-                            <p class="text-xs text-slate-500 leading-relaxed"><strong class="text-gravity-lime uppercase tracking-wider">The Reality:</strong> "Meshing" is often a veil for <strong class="text-gravity-navy">Affinity Bias</strong>. It usually means "they don't act/look/talk exactly like us." This kills diversity. We want <strong>Culture Add</strong>, not Culture Replication.</p>
+                            <p class="italic text-slate-600 mb-3">"I just don't think they would mesh well with the team."</p>
+                            <p class="text-xs text-slate-500 leading-relaxed"><strong class="text-gravity-lime uppercase tracking-wider">The Reality:</strong> "Meshing" is often a veil for <strong class="text-gravity-navy">Affinity Bias</strong>. We want <strong>Culture Add</strong>, not Culture Replication.</p>
                         </div>
                     </div>
-
-                    <!-- Trap 3 -->
                     <div class="flex flex-col md:flex-row gap-8 items-start border-b border-slate-200 pb-8">
-                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center shrink-0 text-red-500">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                        </div>
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center shrink-0 text-red-500 font-bold">!</div>
                         <div>
                             <h4 class="text-xl weight-black text-gravity-navy mb-2 uppercase">"The Passion Trap"</h4>
-                            <p class="italic text-slate-600 mb-3">They didn't seem excited enough about the company mission.</p>
-                            <p class="text-xs text-slate-500 leading-relaxed"><strong class="text-gravity-lime uppercase tracking-wider">The Reality:</strong> You might be confusing <em>extroversion</em> with <em>engagement</em>. Candidates from different cultures or neurodiverse backgrounds may express enthusiasm differently. Look for <strong>preparation</strong> (did they do the homework?) rather than emotional performance.</p>
+                            <p class="italic text-slate-600 mb-3">"They didn't seem excited enough about the company mission."</p>
+                            <p class="text-xs text-slate-500 leading-relaxed"><strong class="text-gravity-lime uppercase tracking-wider">The Reality:</strong> You might be confusing <em>extroversion</em> with <em>engagement</em>. Look for <strong>preparation</strong> rather than emotional performance.</p>
                         </div>
                     </div>
-
-                    <!-- Trap 4 -->
                     <div class="flex flex-col md:flex-row gap-8 items-start">
-                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center shrink-0 text-red-500">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                        </div>
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center shrink-0 text-red-500 font-bold">!</div>
                         <div>
                             <h4 class="text-xl weight-black text-gravity-navy mb-2 uppercase">"The Pedigree Shortcut"</h4>
-                            <div class="italic text-slate-600 mb-3 space-y-2">
-                                <p>• They worked at a big corporate firm, so they won't be able to handle our structure.</p>
-                                <p>• They worked at [Big Tech Company], so they must have elite skills.</p>
-                            </div>
-                            <p class="text-xs text-slate-500 leading-relaxed"><strong class="text-gravity-lime uppercase tracking-wider">The Reality:</strong> You are judging the environment they came from, not the person. Big company experience doesn't guarantee competence (Halo Effect), nor does it guarantee rigidity. We must evaluate <strong>skills</strong>, not the logo on the resume.</p>
+                            <p class="italic text-slate-600 mb-3 space-y-2">"They worked at [Big Tech Company], so they must have elite skills."</p>
+                            <p class="text-xs text-slate-500 leading-relaxed"><strong class="text-gravity-lime uppercase tracking-wider">The Reality:</strong> You are judging the environment they came from, not the person. We must evaluate <strong>skills</strong>, not the logo on the resume.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Topic Separator: Little Logo -->
-        <div class="separator-g">
-            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50" onerror="this.style.display='none'">
-        </div>
 
         <!-- Section 4: The Exposure Audit -->
         <section id="exposure" class="py-24 border-b border-slate-100">
@@ -508,11 +461,6 @@
             </div>
         </section>
 
-        <!-- Topic Separator: Little Logo -->
-        <div class="separator-g">
-            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50" onerror="this.style.display='none'">
-        </div>
-
         <!-- Section 5: Corporate Audit -->
         <section id="audit" class="py-24 border-b border-slate-100">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -524,27 +472,22 @@
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="audit-card">
                     <p class="font-bold text-xl text-gravity-navy mb-3 uppercase font-heading">Q1: "Tell me about a time you worked in a high-growth startup environment."</p>
-                    <p class="text-sm text-slate-500 leading-relaxed"><strong>The Trap:</strong> Bias toward specific industries. Limits candidates from stable corporate, non-profit, or government backgrounds who possess the same core skill of adaptability.</p>
+                    <p class="text-sm text-slate-500 leading-relaxed"><strong>The Trap:</strong> Bias toward specific industries. Limits candidates from stable corporate, non-profit, or government backgrounds.</p>
                 </div>
                 <div class="audit-card">
                     <p class="font-bold text-xl text-gravity-navy mb-3 uppercase font-heading">Q2: "What would your last boss say about your 'culture fit'?"</p>
-                    <p class="text-sm text-slate-500 leading-relaxed"><strong>The Trap:</strong> 'Culture fit' is a dangerous term that often masks affinity bias. It rewards similarity of personality and background rather than role competency.</p>
+                    <p class="text-sm text-slate-500 leading-relaxed"><strong>The Trap:</strong> 'Culture fit' masks affinity bias. It rewards similarity of personality rather than competency.</p>
                 </div>
                 <div class="audit-card">
                     <p class="font-bold text-xl text-gravity-navy mb-3 uppercase font-heading">Q3: "Would you rather be perfect and late, or good and on time?"</p>
-                    <p class="text-sm text-slate-500 leading-relaxed"><strong>The Trap:</strong> The "False Binary." It forces a choice lacking context. Real work requires balancing both based on the situation. It tests their ability to guess your preferred answer, not their judgment.</p>
+                    <p class="text-sm text-slate-500 leading-relaxed"><strong>The Trap:</strong> The "False Binary." Real work requires balancing both based on the situation. It tests their ability to guess your preferred answer.</p>
                 </div>
                 <div class="audit-card">
                     <p class="font-bold text-xl text-gravity-navy mb-3 uppercase font-heading">Q4: "Tell me about a time you showed 'scrappiness' to solve a problem."</p>
-                    <p class="text-sm text-slate-500 leading-relaxed"><strong>The Trap:</strong> Subjective terminology. Rewards candidates who use specific entrepreneurial jargon rather than testing for the actual skill of resourcefulness.</p>
+                    <p class="text-sm text-slate-500 leading-relaxed"><strong>The Trap:</strong> Subjective terminology. Rewards candidates who use specific entrepreneurial jargon.</p>
                 </div>
             </div>
         </section>
-
-        <!-- Topic Separator: Little Logo -->
-        <div class="separator-g">
-            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50" onerror="this.style.display='none'">
-        </div>
 
         <!-- Section 6: Soft Skills & Competencies -->
         <section id="softskills" class="py-32">
@@ -562,7 +505,7 @@
                     <ul class="space-y-6">
                         <li class="flex gap-4">
                             <div class="w-2 h-2 mt-2 bg-gravity-lime rounded-full shrink-0"></div>
-                            <p class="text-slate-600 text-sm"><span class="font-bold text-slate-900">Curiosity:</span> Do they ask "why"? Do they seek to understand the root cause before acting?</p>
+                            <p class="text-slate-600 text-sm"><span class="font-bold text-slate-900">Curiosity:</span> Do they seek to understand the root cause before acting?</p>
                         </li>
                         <li class="flex gap-4">
                             <div class="w-2 h-2 mt-2 bg-gravity-lime rounded-full shrink-0"></div>
@@ -580,26 +523,21 @@
                 </div>
                 <div class="bg-gravity-navy text-white p-12 rounded-[3rem] shadow-sm">
                     <h4 class="text-2xl weight-black text-gravity-lime mb-6 font-heading uppercase">Why use them?</h4>
-                    <p class="text-sm text-slate-300 mb-6 leading-relaxed">Competencies are the tool we use to <strong>hack our own biology</strong>. They are the specific "Brake Pedal" that forces the Prefrontal Cortex to take over.</p>
+                    <p class="text-sm text-slate-300 mb-6 leading-relaxed">Competencies are the tool we use to <strong>hack our own biology</strong>. They are the "Brake Pedal" that forces the Prefrontal Cortex to take over.</p>
                     <div class="grid grid-cols-1 gap-4 text-xs text-slate-300">
-                        <p class="p-3 border border-white/10 rounded-lg"><strong class="text-white uppercase">Neutralize the "Vibe":</strong> They force us to measure <em>evidence</em> rather than relying on the Amygdala's "gut feeling."</p>
+                        <p class="p-3 border border-white/10 rounded-lg"><strong class="text-white uppercase">Neutralize the "Vibe":</strong> They force us to measure <em>evidence</em> rather than relying on gut feelings.</p>
                         <p class="p-3 border border-white/10 rounded-lg"><strong class="text-white uppercase">Bypass Contextual Barriers:</strong> We stop asking "Did they work at a startup?" and start asking "Do they Drive Results?"</p>
-                        <p class="p-3 border border-white/10 rounded-lg"><strong class="text-white uppercase">Engage System 2:</strong> They require active cognitive effort, preventing the "Lazy Brain" from defaulting to stereotypes.</p>
                     </div>
                 </div>
             </div>
 
             <div class="p-12 bg-gravity-light rounded-[3rem] border-t-8 border-gravity-lime shadow-sm">
                 <h4 class="text-2xl weight-black text-gravity-navy mb-5 font-heading uppercase text-center">The Evidence Rule</h4>
-                <p class="text-slate-600 leading-relaxed text-sm text-center max-w-2xl mx-auto mb-8">
-                    You <strong>should not</strong> give a score based on a "feeling." Feelings are just Hippocampus associations trying to bypass the Prefrontal Cortex. Every rating must be backed by a direct quote or a specific behavior observed.
-                </p>
                 <div class="bg-white p-10 rounded-2xl text-center text-gravity-navy border border-slate-200">
                     <p class="text-3xl weight-black leading-tight uppercase">If you can't find the proof in your notes, don't give the score.</p>
                 </div>
             </div>
 
-            <!-- Closing -->
             <div class="mt-40 text-center pb-20 uppercase font-heading">
                 <h2 class="text-6xl weight-black text-gravity-navy mb-8 tracking-tighter leading-tight">Objective Hiring is <br><span class="text-gravity-lime">High-Performance</span> Hiring.</h2>
             </div>
@@ -608,7 +546,7 @@
 
     <footer class="bg-slate-900 text-white py-24 px-8 text-center">
         <div class="max-w-7xl mx-auto opacity-80 uppercase tracking-widest text-xs">
-            <p class="weight-medium text-slate-400">Internal Use Only | Unconscious Bias Training</p>
+            <p class="weight-medium text-slate-400">Internal Use Only | Gravity Payments Training</p>
         </div>
     </footer>
 
@@ -622,11 +560,13 @@
 
         // --- Game Logic ---
         const gameData = [
+            { prompt: "Thunder and ____", emoji: "⚡" },
             { prompt: "For dessert on my birthday, I had birthday ____", emoji: "🎂" },
+            { prompt: "For breakfast I have ____", emoji: "🥞" },
             { prompt: "When I think of a 'common pet', I picture a ____", emoji: "🐶" },
-            { prompt: "When I'm going to the beach, I need my ____", emoji: "🕶️" },
-            { prompt: "For breakfast, most people eat a bowl of ____", emoji: "🥣" },
-            { prompt: "My favorite hot drink on a cold day is ____", emoji: "☕" }
+            { prompt: "My favorite sport is ____", emoji: "⚽" },
+            { prompt: "My favorite emoji is ____", emoji: "✨" },
+            { prompt: "When I'm going to the beach, I need my ____", emoji: "🕶️" }
         ];
 
         let currentCardIndex = 0;
@@ -644,7 +584,6 @@
             introDiv.classList.add('hidden');
             playDiv.classList.remove('hidden-game');
             updateCard();
-            // Scroll to game
             playDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
