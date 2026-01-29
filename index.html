@@ -53,6 +53,49 @@
             background-color: rgba(255, 255, 255, 0.95);
         }
 
+        /* --- Game Styles --- */
+        .game-container {
+            perspective: 1000px;
+        }
+        .game-card {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        .game-card.is-flipped {
+            transform: rotateY(180deg);
+        }
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .card-front {
+            background-color: white;
+            border: 4px solid var(--gravity-navy);
+            color: var(--gravity-navy);
+        }
+        .card-back {
+            background-color: var(--gravity-lime);
+            color: white;
+            transform: rotateY(180deg);
+        }
+        .hidden-game {
+            display: none;
+        }
+
         .anatomy-card {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid #e2e8f0;
@@ -101,7 +144,7 @@
             display: flex;
             justify-content: center;
             padding: 80px 0;
-            opacity: 0.3; /* Makes the little logo subtle */
+            opacity: 0.3;
         }
 
         .weight-black { font-weight: 900; }
@@ -117,11 +160,11 @@
     <nav class="sticky-nav sticky top-0 z-50 border-b border-slate-100 py-4 px-8">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="weight-black text-2xl tracking-tighter text-gravity-navy uppercase font-heading">
-                <!-- Main Logo Here -->
-                <img src="mainlogo.png" alt="Gravity Payments" class="h-10 w-auto">
+                <img src="mainlogo.png" alt="Gravity Payments" class="h-10 w-auto" onerror="this.src='https://gravitypayments.com/wp-content/uploads/2021/03/Gravity_Logo_Horizontal_GreenNavy-1.png'">
             </div>
             <div class="hidden md:flex gap-10 text-[11px] weight-extrabold uppercase tracking-widest text-slate-400">
                 <a href="#objectives" class="hover:text-gravity-lime transition-colors">Objectives</a>
+                <a href="#game" class="hover:text-gravity-lime transition-colors">Icebreaker</a>
                 <a href="#science" class="hover:text-gravity-lime transition-colors">Efficiency</a>
                 <a href="#anatomy" class="hover:text-gravity-lime transition-colors">Anatomy</a>
                 <a href="#biases" class="hover:text-gravity-lime transition-colors">The Biases</a>
@@ -160,12 +203,56 @@
                         </div>
                     </div>
                 </div>
-                <!-- Decorative Circle -->
                 <div class="absolute -right-20 -bottom-40 w-80 h-80 bg-gravity-lime opacity-10 rounded-full blur-3xl"></div>
             </div>
         </section>
+
+        <!-- Section 1: Fill in the Blank (Icebreaker) -->
+        <section id="game" class="py-24 border-b border-slate-100">
+            <div class="max-w-4xl mx-auto py-12 bg-slate-50 rounded-[3rem] p-12 border border-slate-200 text-center">
+                <div id="game-intro">
+                    <h2 class="text-xs weight-bold text-gravity-lime tracking-[0.3em] uppercase mb-4">Icebreaker</h2>
+                    <h3 class="text-4xl weight-black text-gravity-navy mb-6 font-heading uppercase">Fill in the Blank</h3>
+                    <p class="text-slate-500 mb-8 max-w-xl mx-auto">React in Google Meet with an emoji that fills in the blank as fast as possible. Don't overthink it.</p>
+                    <button onclick="startGame()" class="bg-gravity-navy text-white px-10 py-4 rounded-full weight-bold uppercase tracking-widest hover:bg-gravity-lime transition-all transform hover:scale-105 shadow-xl">
+                        Start Game
+                    </button>
+                </div>
+
+                <div id="game-play" class="hidden-game max-w-lg mx-auto">
+                    <div class="mb-4 text-xs weight-bold text-slate-400 uppercase tracking-widest">
+                        Prompt <span id="current-card-num">1</span> of 5
+                    </div>
+                    <div class="game-container">
+                        <div id="main-card" class="game-card" onclick="flipCard()">
+                            <div class="card-face card-front">
+                                <h4 id="card-prompt" class="text-2xl weight-black font-heading leading-tight italic">"Loading..."</h4>
+                            </div>
+                            <div class="card-face card-back">
+                                <div class="text-center">
+                                    <span id="card-emoji" class="text-8xl block mb-4">🎂</span>
+                                    <p class="text-xs uppercase weight-black tracking-widest opacity-80">Click for next prompt</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-8 text-sm text-slate-400">Click reveal association, then click again to advance.</p>
+                </div>
+
+                <div id="game-conclusion" class="hidden-game max-w-2xl mx-auto">
+                    <h3 class="text-3xl weight-black text-gravity-navy mb-4 font-heading uppercase">The Power of Association</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        These fast reactions show how <strong>Cultural Schemas</strong> create "default" answers. We may share the same association, or we may differ based on our background.
+                    </p>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 text-left mb-8">
+                        <p class="text-sm text-slate-500"><strong class="text-gravity-navy">The takeaway:</strong> Bias happens when we judge a candidate based on whether they match our specific "associations" (the gut feeling) rather than their actual performance data.</p>
+                    </div>
+                    <button onclick="resetGame()" class="text-xs weight-bold text-gravity-lime uppercase tracking-widest underline underline-offset-4">Restart Game</button>
+                </div>
+            </div>
+        </section>
         
-        <!-- Section 1: The Origin of Bias -->
+        <!-- Section 2: The Origin of Bias -->
         <section id="science" class="py-24">
             <div class="grid lg:grid-cols-12 gap-20 mb-32">
                 <div class="lg:col-span-6">
@@ -240,10 +327,10 @@
 
         <!-- Topic Separator: Little Logo -->
         <div class="separator-g">
-            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50">
+            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50" onerror="this.style.display='none'">
         </div>
 
-        <!-- Section 2: Anatomy of Bias -->
+        <!-- Section 3: Anatomy of Bias -->
         <section id="anatomy" class="py-24">
             <div class="text-center max-w-3xl mx-auto mb-20">
                 <h2 class="text-xs weight-bold text-gravity-lime tracking-[0.3em] uppercase mb-4">Biological Mechanics</h2>
@@ -285,7 +372,7 @@
 
         <!-- Topic Separator: Little Logo -->
         <div class="separator-g">
-            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50">
+            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50" onerror="this.style.display='none'">
         </div>
 
         <!-- Section 3: Review of Biases -->
@@ -341,7 +428,7 @@
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path></svg>
                         </div>
                         <div>
-                            <h4 class="text-xl weight-black text-gravity-navy mb-2">"Making the Decision For Them"</h4>
+                            <h4 class="text-xl weight-black text-gravity-navy mb-2 uppercase">"Making the Decision For Them"</h4>
                             <p class="italic text-slate-600 mb-3">I don't think they'd be happy in this role long-term. They've managed teams before, so they'll get bored being an individual contributor.</p>
                             <p class="text-xs text-slate-500 leading-relaxed"><strong class="text-gravity-lime uppercase tracking-wider">The Reality:</strong> You are rejecting them based on an assumption about their desires, not their actual stated motivation. You are hiring for <em>retention prediction</em> rather than <em>role capability</em>. Let the candidate decide what they want.</p>
                         </div>
@@ -353,7 +440,7 @@
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                         </div>
                         <div>
-                            <h4 class="text-xl weight-black text-gravity-navy mb-2">"The Mesh Fallacy"</h4>
+                            <h4 class="text-xl weight-black text-gravity-navy mb-2 uppercase">"The Mesh Fallacy"</h4>
                             <p class="italic text-slate-600 mb-3">I just don't think they would mesh well with the team.</p>
                             <p class="text-xs text-slate-500 leading-relaxed"><strong class="text-gravity-lime uppercase tracking-wider">The Reality:</strong> "Meshing" is often a veil for <strong class="text-gravity-navy">Affinity Bias</strong>. It usually means "they don't act/look/talk exactly like us." This kills diversity. We want <strong>Culture Add</strong>, not Culture Replication.</p>
                         </div>
@@ -365,7 +452,7 @@
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                         </div>
                         <div>
-                            <h4 class="text-xl weight-black text-gravity-navy mb-2">"The Passion Trap"</h4>
+                            <h4 class="text-xl weight-black text-gravity-navy mb-2 uppercase">"The Passion Trap"</h4>
                             <p class="italic text-slate-600 mb-3">They didn't seem excited enough about the company mission.</p>
                             <p class="text-xs text-slate-500 leading-relaxed"><strong class="text-gravity-lime uppercase tracking-wider">The Reality:</strong> You might be confusing <em>extroversion</em> with <em>engagement</em>. Candidates from different cultures or neurodiverse backgrounds may express enthusiasm differently. Look for <strong>preparation</strong> (did they do the homework?) rather than emotional performance.</p>
                         </div>
@@ -377,7 +464,7 @@
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
                         </div>
                         <div>
-                            <h4 class="text-xl weight-black text-gravity-navy mb-2">"The Pedigree Shortcut"</h4>
+                            <h4 class="text-xl weight-black text-gravity-navy mb-2 uppercase">"The Pedigree Shortcut"</h4>
                             <div class="italic text-slate-600 mb-3 space-y-2">
                                 <p>• They worked at a big corporate firm, so they won't be able to handle our structure.</p>
                                 <p>• They worked at [Big Tech Company], so they must have elite skills.</p>
@@ -391,7 +478,7 @@
 
         <!-- Topic Separator: Little Logo -->
         <div class="separator-g">
-            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50">
+            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50" onerror="this.style.display='none'">
         </div>
 
         <!-- Section 4: The Exposure Audit -->
@@ -423,7 +510,7 @@
 
         <!-- Topic Separator: Little Logo -->
         <div class="separator-g">
-            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50">
+            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50" onerror="this.style.display='none'">
         </div>
 
         <!-- Section 5: Corporate Audit -->
@@ -456,7 +543,7 @@
 
         <!-- Topic Separator: Little Logo -->
         <div class="separator-g">
-            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50">
+            <img src="littlelogo.png" alt="Gravity" class="h-10 w-auto opacity-50" onerror="this.style.display='none'">
         </div>
 
         <!-- Section 6: Soft Skills & Competencies -->
@@ -495,20 +582,20 @@
                     <h4 class="text-2xl weight-black text-gravity-lime mb-6 font-heading uppercase">Why use them?</h4>
                     <p class="text-sm text-slate-300 mb-6 leading-relaxed">Competencies are the tool we use to <strong>hack our own biology</strong>. They are the specific "Brake Pedal" that forces the Prefrontal Cortex to take over.</p>
                     <div class="grid grid-cols-1 gap-4 text-xs text-slate-300">
-                        <p class="p-3 border border-white/10 rounded-lg"><strong class="text-white">Neutralize the "Vibe":</strong> They force us to measure <em>evidence</em> rather than relying on the Amygdala's "gut feeling."</p>
-                        <p class="p-3 border border-white/10 rounded-lg"><strong class="text-white">Bypass Contextual Barriers:</strong> We stop asking "Did they work at a startup?" and start asking "Do they Drive Results?"</p>
-                        <p class="p-3 border border-white/10 rounded-lg"><strong class="text-white">Engage System 2:</strong> They require active cognitive effort, preventing the "Lazy Brain" from defaulting to stereotypes.</p>
+                        <p class="p-3 border border-white/10 rounded-lg"><strong class="text-white uppercase">Neutralize the "Vibe":</strong> They force us to measure <em>evidence</em> rather than relying on the Amygdala's "gut feeling."</p>
+                        <p class="p-3 border border-white/10 rounded-lg"><strong class="text-white uppercase">Bypass Contextual Barriers:</strong> We stop asking "Did they work at a startup?" and start asking "Do they Drive Results?"</p>
+                        <p class="p-3 border border-white/10 rounded-lg"><strong class="text-white uppercase">Engage System 2:</strong> They require active cognitive effort, preventing the "Lazy Brain" from defaulting to stereotypes.</p>
                     </div>
                 </div>
             </div>
 
             <div class="p-12 bg-gravity-light rounded-[3rem] border-t-8 border-gravity-lime shadow-sm">
                 <h4 class="text-2xl weight-black text-gravity-navy mb-5 font-heading uppercase text-center">The Evidence Rule</h4>
-                <p class="text-slate-600 leading-relaxed weight-regular text-sm text-center max-w-2xl mx-auto mb-8">
+                <p class="text-slate-600 leading-relaxed text-sm text-center max-w-2xl mx-auto mb-8">
                     You <strong>should not</strong> give a score based on a "feeling." Feelings are just Hippocampus associations trying to bypass the Prefrontal Cortex. Every rating must be backed by a direct quote or a specific behavior observed.
                 </p>
-                <div class="bg-white p-10 rounded-2xl text-center text-gravity-navy weight-medium border border-slate-200">
-                    <p class="text-3xl weight-black leading-tight">If you can't find the proof in your notes, don't give the score.</p>
+                <div class="bg-white p-10 rounded-2xl text-center text-gravity-navy border border-slate-200">
+                    <p class="text-3xl weight-black leading-tight uppercase">If you can't find the proof in your notes, don't give the score.</p>
                 </div>
             </div>
 
@@ -532,6 +619,71 @@
             const progressWidth = (window.pageYOffset / totalHeight) * 100;
             progress.style.width = progressWidth + '%';
         });
+
+        // --- Game Logic ---
+        const gameData = [
+            { prompt: "For dessert on my birthday, I had birthday ____", emoji: "🎂" },
+            { prompt: "When I think of a 'common pet', I picture a ____", emoji: "🐶" },
+            { prompt: "When I'm going to the beach, I need my ____", emoji: "🕶️" },
+            { prompt: "For breakfast, most people eat a bowl of ____", emoji: "🥣" },
+            { prompt: "My favorite hot drink on a cold day is ____", emoji: "☕" }
+        ];
+
+        let currentCardIndex = 0;
+        let isFlipped = false;
+
+        const introDiv = document.getElementById('game-intro');
+        const playDiv = document.getElementById('game-play');
+        const conclusionDiv = document.getElementById('game-conclusion');
+        const cardElement = document.getElementById('main-card');
+        const promptText = document.getElementById('card-prompt');
+        const emojiText = document.getElementById('card-emoji');
+        const cardNumText = document.getElementById('current-card-num');
+
+        function startGame() {
+            introDiv.classList.add('hidden');
+            playDiv.classList.remove('hidden-game');
+            updateCard();
+            // Scroll to game
+            playDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function flipCard() {
+            if (!isFlipped) {
+                cardElement.classList.add('is-flipped');
+                isFlipped = true;
+            } else {
+                cardElement.classList.remove('is-flipped');
+                isFlipped = false;
+                setTimeout(() => {
+                    currentCardIndex++;
+                    if (currentCardIndex < gameData.length) {
+                        updateCard();
+                    } else {
+                        finishGame();
+                    }
+                }, 300);
+            }
+        }
+
+        function updateCard() {
+            const data = gameData[currentCardIndex];
+            promptText.innerText = data.prompt;
+            emojiText.innerText = data.emoji;
+            cardNumText.innerText = currentCardIndex + 1;
+        }
+
+        function finishGame() {
+            playDiv.classList.add('hidden-game');
+            conclusionDiv.classList.remove('hidden-game');
+        }
+
+        function resetGame() {
+            currentCardIndex = 0;
+            isFlipped = false;
+            conclusionDiv.classList.add('hidden-game');
+            introDiv.classList.remove('hidden');
+        }
     </script>
 </body>
 </html>
