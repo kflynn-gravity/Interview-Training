@@ -53,7 +53,7 @@
             background-color: rgba(255, 255, 255, 0.95);
         }
 
-        /* --- Game Styles --- */
+        /* --- Card Styles --- */
         .game-container {
             perspective: 1000px;
         }
@@ -92,14 +92,14 @@
             color: white;
             transform: rotateY(180deg);
         }
-        .hidden-game {
+        .hidden-section {
             display: none;
         }
 
         .anatomy-card {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             background-color: white;
-            border: 4px solid transparent;
+            border: 1px solid #e2e8f0;
         }
         .anatomy-card:hover {
             transform: translateY(-10px);
@@ -113,10 +113,6 @@
             padding: 2rem;
             border-radius: 1rem;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: border-color 0.3s ease;
-        }
-        .audit-card:hover {
-            border-left-color: var(--gravity-lime);
         }
 
         .bias-card {
@@ -129,7 +125,6 @@
         .bias-card:hover {
             border-color: var(--gravity-lime);
             background: white;
-            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
         }
 
         .weight-black { font-weight: 900; }
@@ -150,7 +145,6 @@
             <div class="hidden md:flex gap-10 text-[11px] weight-extrabold uppercase tracking-widest text-slate-400">
                 <a href="#objectives" class="hover:text-gravity-lime transition-colors">Objectives</a>
                 <a href="#game" class="hover:text-gravity-lime transition-colors">Icebreaker</a>
-                <a href="#gut" class="hover:text-gravity-lime transition-colors">The Gut Trap</a>
                 <a href="#science" class="hover:text-gravity-lime transition-colors">Science</a>
                 <a href="#anatomy" class="hover:text-gravity-lime transition-colors">Brain Tour</a>
                 <a href="#traps" class="hover:text-gravity-lime transition-colors">Traps</a>
@@ -204,7 +198,7 @@
                     </button>
                 </div>
 
-                <div id="game-play" class="hidden-game max-w-lg mx-auto">
+                <div id="game-play" class="hidden-section max-w-lg mx-auto">
                     <div class="mb-4 text-xs weight-bold text-slate-400 uppercase tracking-widest">
                         Prompt <span id="current-card-num">1</span> of 7
                     </div>
@@ -223,7 +217,7 @@
                     </div>
                 </div>
 
-                <div id="game-conclusion" class="hidden-game max-w-2xl mx-auto">
+                <div id="game-conclusion" class="hidden-section max-w-2xl mx-auto">
                     <h3 class="text-3xl weight-black text-gravity-navy mb-4 font-heading uppercase">Association is a Trap</h3>
                     <p class="text-slate-600 mb-6 leading-relaxed text-sm italic">
                         Most hiring mistakes happen because we value "shared associations" more than actual performance evidence.
@@ -244,7 +238,7 @@
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-xs weight-bold text-gravity-lime tracking-[0.3em] uppercase mb-4">The Danger Zone</h2>
                 <h3 class="text-5xl weight-black text-gravity-navy mb-6 tracking-tight font-heading uppercase">The Gut Trap</h3>
-                <p class="text-slate-500">Industry research identifies these common styles as the primary causes of mis-hires. Which one is your "Brain Noise"?</p>
+                <p class="text-slate-500">Research identifies these common styles as the primary causes of mis-hires. Which one is your "Brain Noise"?</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-6 mb-24">
@@ -262,11 +256,11 @@
                 </div>
             </div>
             <div class="text-center">
-                <span class="text-[10px] text-slate-400 uppercase tracking-widest italic">Research support from Geoff Smart's "Who: The A Method for Hiring"</span>
+                <span class="text-[10px] text-slate-400 uppercase tracking-widest italic">Research support from "Who: The A Method for Hiring"</span>
             </div>
         </section>
 
-        <!-- Section 3: The Science (Interactive Stroop & 95/5) -->
+        <!-- Section 3: The Science (Cognitive Miser & Brain Shortcuts) -->
         <section id="science" class="py-24">
             <div class="grid lg:grid-cols-12 gap-20 mb-32">
                 <div class="lg:col-span-6">
@@ -275,46 +269,54 @@
                     <p class="text-xl text-slate-600 mb-6 leading-relaxed">
                         Human brains are biologically programmed to find the path of least resistance.
                     </p>
-                    <p class="text-slate-600 mb-6">
-                        When faced with millions of bits of data per second, your brain relies on <strong>"System 1"</strong>—the fast engine that skips the hard work of analysis to give you an instant "feeling."
+                    <p class="text-slate-600 mb-8">
+                        When faced with millions of bits of data, your brain relies on <strong>"System 1"</strong>—the autopilot engine that skips analysis to give you an instant shortcut.
                     </p>
-                    <div class="bg-gravity-light p-8 rounded-2xl border-l-8 border-gravity-navy">
-                        <p class="text-sm italic text-slate-700">"System 1 operates automatically and quickly, with little or no effort and no sense of voluntary control."</p>
-                        <span class="text-[10px] text-slate-400 uppercase tracking-widest block mt-2">— Daniel Kahneman, Thinking, Fast and Slow</span>
+
+                    <!-- NEW BRAIN SHORTCUT VISUAL (TYPOGLYCEMIA) -->
+                    <div class="bg-gravity-navy p-8 rounded-3xl text-white shadow-lg relative overflow-hidden">
+                        <h4 class="text-xs weight-black text-gravity-lime uppercase tracking-widest mb-4">Brain Shortcut Demo</h4>
+                        <div id="jumble-text" class="text-lg weight-bold leading-relaxed mb-6 font-heading">
+                            "It dseno't mttaer in waht oerdr the ltteers in a wrod are, the olny iprmoatnt tihng is taht the frist and lsat ltteer be in the rghit pclae."
+                        </div>
+                        <div id="jumble-reveal" class="hidden-section bg-white/10 p-4 rounded-xl text-sm mb-6 border border-white/20">
+                            <strong>The Reality:</strong> You could read that perfectly even though the data was jumbled. Your brain ignored the mess and "filled in the blanks" to create a story that made sense.
+                        </div>
+                        <button onclick="revealJumble()" id="jumble-btn" class="bg-gravity-lime text-gravity-navy px-6 py-2 rounded-full text-xs weight-black uppercase tracking-widest">Reveal Meaning</button>
                     </div>
                 </div>
 
-                <!-- INTERACTIVE STROOP TEST -->
+                <!-- STROOP TEST -->
                 <div class="lg:col-span-6">
-                    <div class="bg-white p-10 rounded-3xl border-2 border-gravity-lime/30 shadow-xl text-center min-h-[400px] flex flex-col justify-center transition-all duration-500">
+                    <div class="bg-white p-10 rounded-3xl border-2 border-gravity-lime/30 shadow-xl text-center min-h-[440px] flex flex-col justify-center">
                         <div id="stroop-intro">
-                            <h4 class="weight-black text-gravity-navy mb-4 font-heading uppercase text-sm tracking-widest">Diagnostic Exercise</h4>
-                            <p class="text-sm text-slate-500 mb-8 leading-relaxed">Let's see your System 1 in action. We're going to show you words on the screen.</p>
+                            <h4 class="weight-black text-gravity-navy mb-4 font-heading uppercase text-sm tracking-widest">The Stroop Exercise</h4>
+                            <p class="text-sm text-slate-500 mb-8 leading-relaxed">Now let's see how hard it is to *stop* the brain from taking a shortcut.</p>
                             <button onclick="startStroop()" class="bg-gravity-navy text-white px-8 py-3 rounded-full text-xs weight-black uppercase tracking-widest hover:bg-gravity-lime transition-all">Begin Exercise</button>
                         </div>
 
-                        <div id="stroop-step-1" class="hidden">
+                        <div id="stroop-step-1" class="hidden-section">
                             <p class="text-xs weight-bold text-slate-400 uppercase tracking-widest mb-6">Phase 1: Easy Mode</p>
                             <h2 class="text-6xl weight-black text-red-500 uppercase font-heading mb-8">RED</h2>
-                            <p class="text-sm text-slate-500 mb-6 italic">Instruction: Say the COLOR of the text out loud.</p>
+                            <p class="text-sm text-slate-500 mb-6 italic">Say the COLOR of the text out loud.</p>
                             <button onclick="nextStroop(2)" class="text-gravity-lime weight-black uppercase text-[10px] tracking-widest underline">Next Phase</button>
                         </div>
 
-                        <div id="stroop-step-2" class="hidden">
-                            <p class="text-xs weight-bold text-slate-400 uppercase tracking-widest mb-6">Phase 2: Add Noise</p>
+                        <div id="stroop-step-2" class="hidden-section">
+                            <p class="text-xs weight-bold text-slate-400 uppercase tracking-widest mb-6">Phase 2: Conflict Mode</p>
                             <h2 class="text-6xl weight-black text-red-500 uppercase font-heading mb-8">BLUE</h2>
-                            <p class="text-sm text-slate-500 mb-6 italic">Instruction: Say the COLOR of the text out loud (not the word).</p>
+                            <p class="text-sm text-slate-500 mb-6 italic">Say the COLOR (Red), not the word (Blue).</p>
                             <button onclick="nextStroop(3)" class="text-gravity-lime weight-black uppercase text-[10px] tracking-widest underline">Show Results</button>
                         </div>
 
-                        <div id="stroop-step-3" class="hidden">
-                            <h4 class="weight-black text-gravity-navy mb-4 font-heading uppercase text-sm tracking-widest">The Results</h4>
-                            <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-                                In Phase 1, the signal was clear. In Phase 2, the word "BLUE" was <strong>Noise</strong>. 
+                        <div id="stroop-step-3" class="hidden-section">
+                            <h4 class="weight-black text-gravity-navy mb-4 font-heading uppercase text-sm tracking-widest">System 1 vs. System 2</h4>
+                            <p class="text-sm text-slate-600 mb-6">
+                                Your System 1 read "BLUE" automatically. Your System 2 had to fight to see the "RED." 
                             </p>
-                            <div class="bg-slate-50 p-6 rounded-2xl text-left border border-slate-100 mb-6">
+                            <div class="bg-slate-50 p-6 rounded-2xl text-left border border-slate-100 mb-4">
                                 <p class="text-[11px] text-slate-500 leading-relaxed italic">
-                                    Discussion: Your System 1 read "BLUE" automatically. Your System 2 had to fight to identify the color. Interviewing is the same—ignoring a "charming" vibe to focus on skill takes energy.
+                                    In an interview, ignoring a candidate's "charm" (System 1) to focus on their actual "competence" (System 2) takes actual cognitive energy.
                                 </p>
                             </div>
                             <button onclick="resetStroop()" class="text-slate-400 weight-black uppercase text-[10px] tracking-widest">Restart</button>
@@ -327,13 +329,13 @@
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-10">
                     <h3 class="text-3xl weight-black text-gravity-navy font-heading uppercase tracking-tight">The Operating System</h3>
-                    <p class="text-slate-500 mt-3 max-w-2xl mx-auto">Neuroscience suggests up to 95% of our decisions are driven by subconscious patterns, not conscious logic.</p>
+                    <p class="text-slate-500 mt-3 max-w-2xl mx-auto">Neuroscience suggests up to 95% of our decisions are driven by subconscious patterns.</p>
                 </div>
 
                 <div class="relative w-full h-40 bg-slate-100 rounded-2xl overflow-hidden flex shadow-lg border border-slate-200">
-                    <div class="h-full bg-gravity-navy flex flex-col justify-center items-center text-white relative group transition-all duration-500 hover:bg-opacity-95" style="width: 95%">
+                    <div class="h-full bg-gravity-navy flex flex-col justify-center items-center text-white relative group" style="width: 95%">
                         <span class="weight-black text-5xl md:text-7xl tracking-tighter opacity-10 group-hover:opacity-20 transition-opacity select-none">95%</span>
-                        <span class="text-xs uppercase tracking-[0.3em] opacity-40 absolute bottom-6 font-heading">Bias / Gut Feeling / Autopilot</span>
+                        <span class="text-xs uppercase tracking-[0.3em] opacity-40 absolute bottom-6 font-heading">Bias / Gut / Autopilot</span>
                     </div>
                     <div class="h-full bg-gravity-lime relative flex items-center justify-center transition-all duration-500 hover:brightness-110" style="width: 5%">
                         <div class="absolute inset-0 bg-white opacity-20 animate-pulse"></div>
@@ -362,14 +364,14 @@
                 <div class="text-center max-w-3xl mx-auto mb-20">
                     <h2 class="text-xs weight-bold text-gravity-lime tracking-[0.3em] uppercase mb-4">The Brain Bus</h2>
                     <h3 class="text-5xl weight-black mb-6 tracking-tight font-heading uppercase italic text-white">The Decision Dashboard</h3>
-                    <p class="text-slate-300 leading-relaxed">Let's look at the hardware that's actually running your interviews.</p>
+                    <p class="text-slate-300 leading-relaxed">The hardware running your interview brain.</p>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-12">
                     <div class="p-10 rounded-[2.5rem] bg-white text-gravity-navy relative group hover:border-gravity-lime border-4 border-transparent transition-all">
                         <h4 class="text-xl weight-black mb-2 font-heading uppercase">The Amygdala</h4>
                         <p class="text-xs weight-extrabold text-red-500 uppercase tracking-widest mb-6 font-heading italic">"The Alarm System"</p>
-                        <p class="text-sm text-slate-600 mb-6">It scans for people your brain flags as "not like us." It sees <em>Different</em> and flags it as <em>Danger</em>.</p>
+                        <p class="text-sm text-slate-600 mb-6">It scans for people who don't act or look like what we're used to. It flags <em>Different</em> as <em>Danger</em>.</p>
                         <div class="bg-red-50 p-4 rounded-xl border border-red-100 text-[11px] text-red-700 font-heading">
                             <strong>How this blocks you:</strong> You feel "tight" or "uncomfortable" on a call. You write it off as a bad vibe, but it's just your brain resisting difference.
                         </div>
@@ -378,7 +380,7 @@
                     <div class="p-10 rounded-[2.5rem] bg-white text-gravity-navy relative group hover:border-gravity-lime border-4 border-transparent transition-all">
                         <h4 class="text-xl weight-black mb-2 font-heading uppercase">The Hippocampus</h4>
                         <p class="text-xs weight-extrabold text-blue-500 uppercase tracking-widest mb-6 font-heading italic">"The Pattern Library"</p>
-                        <p class="text-sm text-slate-600 mb-6">It stores societal tropes and associations. It tells you: "Successful people usually look/talk like THIS."</p>
+                        <p class="text-sm text-slate-600 mb-6">Stores tropes and associations. It tells you: "Successful people usually look/talk like THIS."</p>
                         <div class="bg-blue-50 p-4 rounded-xl border border-blue-100 text-[11px] text-blue-700 font-heading">
                             <strong>How this blocks you:</strong> You start looking for evidence to prove your first 30-second association right, ignoring all other talent data.
                         </div>
@@ -387,7 +389,7 @@
                     <div class="p-10 rounded-[2.5rem] bg-white text-gravity-navy relative group hover:border-gravity-lime border-4 border-transparent transition-all">
                         <h4 class="text-xl weight-black mb-2 font-heading uppercase">Prefrontal Cortex</h4>
                         <p class="text-xs weight-extrabold text-gravity-lime uppercase tracking-widest mb-6 font-heading italic">"The Pilot"</p>
-                        <p class="text-sm text-slate-600 mb-6">The only part that can read a Scorecard. It uses logic to override the "Gut." It's high-energy and gets tired easily.</p>
+                        <p class="text-sm text-slate-600 mb-6">The only part that can read a Scorecard. It overrides the "Gut." It's high-energy and gets tired easily.</p>
                         <div class="bg-lime-50 p-4 rounded-xl border border-lime-100 text-[11px] text-gravity-lime font-heading">
                             <strong>How this fuels you:</strong> This is where objectivity lives. We use <strong>Competencies</strong> to keep the Pilot in control of the decision.
                         </div>
@@ -407,22 +409,22 @@
                 <div class="bias-card">
                     <h4 class="text-xl weight-black text-gravity-navy mb-2 uppercase">"The Mesh Fallacy"</h4>
                     <p class="italic text-slate-600 mb-3 text-sm">"I don't think they'd mesh well with the team."</p>
-                    <p class="text-xs text-slate-500"><strong>The Real Issue:</strong> Code for Affinity Bias. We want <strong>Culture Add</strong>. If everyone meshes perfectly, we stop challenging each other's ideas.</p>
+                    <p class="text-xs text-slate-500"><strong>The High-Performance Issue:</strong> We want <strong>Culture Add</strong>. If everyone meshes perfectly, we stop challenging each other's ideas.</p>
                 </div>
                 <div class="bias-card">
                     <h4 class="text-xl weight-black text-gravity-navy mb-2 uppercase">"The Passion Trap"</h4>
                     <p class="italic text-slate-600 mb-3 text-sm">"They didn't seem excited about our mission."</p>
-                    <p class="text-xs text-slate-500"><strong>The Real Issue:</strong> You're rewarding extroversion. Look for <strong>Preparation</strong> (research) rather than emotional energy levels.</p>
+                    <p class="text-xs text-slate-500"><strong>The High-Performance Issue:</strong> You're rewarding extroversion. Look for <strong>Preparation</strong> rather than emotional energy.</p>
                 </div>
                 <div class="bias-card">
                     <h4 class="text-xl weight-black text-gravity-navy mb-2 uppercase">"The Decision For Them"</h4>
                     <p class="italic text-slate-600 mb-3 text-sm">"They've managed before, they'll get bored here."</p>
-                    <p class="text-xs text-slate-500"><strong>The Real Issue:</strong> Assumption about their ego. If they have the skills, let <em>them</em> decide if they'll be bored.</p>
+                    <p class="text-xs text-slate-500"><strong>The High-Performance Issue:</strong> Assumption about their ego. If they have the skills, let <em>them</em> decide if they'll be bored.</p>
                 </div>
                 <div class="bias-card">
                     <h4 class="text-xl weight-black text-gravity-navy mb-2 uppercase">"The Pedigree Shortcut"</h4>
                     <p class="italic text-slate-600 mb-3 text-sm">"They worked at [Big Bank], they won't be scrappy."</p>
-                    <p class="text-xs text-slate-500"><strong>The Real Issue:</strong> Judging the past employer logo. Test for <strong>Grit</strong> directly instead of assuming.</p>
+                    <p class="text-xs text-slate-500"><strong>The High-Performance Issue:</strong> Judging the past employer logo. Test for <strong>Grit</strong> directly instead of assuming.</p>
                 </div>
             </div>
         </section>
@@ -465,7 +467,7 @@
             <div class="text-center mb-20">
                 <h2 class="text-xs weight-bold text-gravity-lime tracking-[0.3em] uppercase mb-4">The Fix</h2>
                 <h3 class="text-5xl weight-black text-gravity-navy font-heading uppercase tracking-tighter">Use Scorecards</h3>
-                <p class="text-slate-500 max-w-2xl mx-auto mt-12 leading-relaxed">The roadmap to high-performing talent. We focus on observable outcomes and competencies, not "vibes."</p>
+                <p class="text-slate-500 max-w-2xl mx-auto mt-12 leading-relaxed">The roadmap to high-performing talent. We focus on evidence, not "vibes."</p>
             </div>
 
             <div class="p-12 bg-white rounded-[3rem] border border-slate-200 shadow-xl max-w-4xl mx-auto">
@@ -497,7 +499,7 @@
             progress.style.width = progressWidth + '%';
         });
 
-        /* --- Emoji Game --- */
+        /* --- Emoji Game Logic --- */
         const gameData = [
             { prompt: "Thunder and ____", emoji: "⚡" },
             { prompt: "For dessert on my birthday, I had birthday ____", emoji: "🎂" },
@@ -520,10 +522,9 @@
         const cardNumText = document.getElementById('current-card-num');
 
         function startGame() {
-            introDiv.classList.add('hidden');
-            playDiv.classList.remove('hidden-game');
+            introDiv.classList.add('hidden-section');
+            playDiv.classList.remove('hidden-section');
             updateCard();
-            playDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
         function flipCard() {
@@ -552,35 +553,41 @@
         }
 
         function finishGame() {
-            playDiv.classList.add('hidden-game');
-            conclusionDiv.classList.remove('hidden-game');
+            playDiv.classList.add('hidden-section');
+            conclusionDiv.classList.remove('hidden-section');
         }
 
         function resetGame() {
             currentCardIndex = 0;
             isFlipped = false;
-            conclusionDiv.classList.add('hidden-game');
-            introDiv.classList.remove('hidden');
+            conclusionDiv.classList.add('hidden-section');
+            introDiv.classList.remove('hidden-section');
+        }
+
+        /* --- Brain Shortcut (Jumble) Logic --- */
+        function revealJumble() {
+            document.getElementById('jumble-reveal').classList.remove('hidden-section');
+            document.getElementById('jumble-btn').style.display = 'none';
         }
 
         /* --- Stroop Test Logic --- */
         function startStroop() {
-            document.getElementById('stroop-intro').classList.add('hidden');
-            document.getElementById('stroop-step-1').classList.remove('hidden');
+            document.getElementById('stroop-intro').classList.add('hidden-section');
+            document.getElementById('stroop-step-1').classList.remove('hidden-section');
         }
 
         function nextStroop(step) {
-            document.getElementById('stroop-step-1').classList.add('hidden');
-            document.getElementById('stroop-step-2').classList.add('hidden');
-            document.getElementById('stroop-step-3').classList.add('hidden');
-            document.getElementById('stroop-step-' + step).classList.remove('hidden');
+            document.getElementById('stroop-step-1').classList.add('hidden-section');
+            document.getElementById('stroop-step-2').classList.add('hidden-section');
+            document.getElementById('stroop-step-3').classList.add('hidden-section');
+            document.getElementById('stroop-step-' + step).classList.remove('hidden-section');
         }
 
         function resetStroop() {
-            document.getElementById('stroop-step-1').classList.add('hidden');
-            document.getElementById('stroop-step-2').classList.add('hidden');
-            document.getElementById('stroop-step-3').classList.add('hidden');
-            document.getElementById('stroop-intro').classList.remove('hidden');
+            document.getElementById('stroop-step-1').classList.add('hidden-section');
+            document.getElementById('stroop-step-2').classList.add('hidden-section');
+            document.getElementById('stroop-step-3').classList.add('hidden-section');
+            document.getElementById('stroop-intro').classList.remove('hidden-section');
         }
     </script>
 </body>
