@@ -99,11 +99,11 @@
         .anatomy-card {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             background-color: white;
-            border: 1px solid #e2e8f0;
+            border: 4px solid transparent;
         }
         .anatomy-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 25px 50px -12px rgba(37, 55, 80, 0.25);
+            box-shadow: 0 25px 50px -12px rgba(37, 55, 80, 0.3);
             border-color: var(--gravity-lime);
         }
 
@@ -166,7 +166,7 @@
                 THE <span class="text-gravity-lime">OBJECTIVE</span> <br>INTERVIEW
             </h1>
             <p class="text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto weight-light leading-relaxed">
-                Clearing the "Brain Noise" to find Gravity's next A-Players.
+                Clearing the "Brain Noise" to find Gravity's high-performance talent.
             </p>
         </div>
     </header>
@@ -184,7 +184,7 @@
                             <p class="mb-4"><strong class="text-white block mb-1 text-lg">Fix the Process</strong> We all have "gut feelings." We are here to learn how to manage them so they don't lead to expensive mis-hires.</p>
                         </div>
                         <div>
-                            <p class="mb-4"><strong class="text-white block mb-1 text-lg">Reliability = Accuracy</strong> We want to replace "vibe" with a repeatable method that actually predicts success in a role.</p>
+                            <p class="mb-4"><strong class="text-white block mb-1 text-lg">Reliability = Accuracy</strong> We want to replace "vibe" with a repeatable method that actually predicts success at Gravity.</p>
                         </div>
                     </div>
                 </div>
@@ -244,13 +244,13 @@
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-xs weight-bold text-gravity-lime tracking-[0.3em] uppercase mb-4">The Danger Zone</h2>
                 <h3 class="text-5xl weight-black text-gravity-navy mb-6 tracking-tight font-heading uppercase">The Gut Trap</h3>
-                <p class="text-slate-500">Research identifies these common styles as the primary causes of mis-hires. Which one is your "Brain Noise"?</p>
+                <p class="text-slate-500">Industry research identifies these common styles as the primary causes of mis-hires. Which one is your "Brain Noise"?</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-6 mb-24">
                 <div class="audit-card">
                     <h4 class="text-lg weight-black text-gravity-navy mb-2 uppercase font-heading">The Art Critic</h4>
-                    <p class="text-xs text-slate-500 leading-relaxed">Trusts their "gut" in the first 10 minutes. This is just <strong>Affinity Bias</strong> masquerading as expertise. You are hiring someone you'd like to have a beer with, not necessarily an A-player.</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">Trusts their "gut" in the first 10 minutes. This is just <strong>Affinity Bias</strong> masquerading as expertise. You are hiring someone you'd like to have a beer with, not necessarily a high performer.</p>
                 </div>
                 <div class="audit-card">
                     <h4 class="text-lg weight-black text-gravity-navy mb-2 uppercase font-heading">The Sponge</h4>
@@ -262,11 +262,11 @@
                 </div>
             </div>
             <div class="text-center">
-                <span class="text-[10px] text-slate-400 uppercase tracking-widest italic">Inspired by research in the book "Who"</span>
+                <span class="text-[10px] text-slate-400 uppercase tracking-widest italic">Research support from Geoff Smart's "Who: The A Method for Hiring"</span>
             </div>
         </section>
 
-        <!-- Section 3: The Science (Cognitive Miser & 95/5) -->
+        <!-- Section 3: The Science (Interactive Stroop & 95/5) -->
         <section id="science" class="py-24">
             <div class="grid lg:grid-cols-12 gap-20 mb-32">
                 <div class="lg:col-span-6">
@@ -276,21 +276,49 @@
                         Human brains are biologically programmed to find the path of least resistance.
                     </p>
                     <p class="text-slate-600 mb-6">
-                        When faced with millions of bits of data per second, your brain relies on <strong>"System 1"</strong>—the fast, automatic, and emotional engine that skips the hard work of analysis to give you an instant "feeling."
+                        When faced with millions of bits of data per second, your brain relies on <strong>"System 1"</strong>—the fast engine that skips the hard work of analysis to give you an instant "feeling."
                     </p>
                     <div class="bg-gravity-light p-8 rounded-2xl border-l-8 border-gravity-navy">
                         <p class="text-sm italic text-slate-700">"System 1 operates automatically and quickly, with little or no effort and no sense of voluntary control."</p>
-                        <span class="text-[10px] text-slate-400 uppercase tracking-widest block mt-2">— Daniel Kahneman</span>
+                        <span class="text-[10px] text-slate-400 uppercase tracking-widest block mt-2">— Daniel Kahneman, Thinking, Fast and Slow</span>
                     </div>
                 </div>
-                <div class="lg:col-span-6 space-y-8">
-                    <div class="bg-white p-8 rounded-3xl border-2 border-gravity-lime/30 shadow-sm">
-                        <h4 class="weight-extrabold text-gravity-navy mb-4 font-heading uppercase text-sm tracking-widest">Workshop: The Stroop Test</h4>
-                        <p class="text-sm text-slate-600 mb-4">Say the <strong>COLOR</strong> of the text, not the word itself, as fast as possible:</p>
-                        <div class="text-center py-6 bg-slate-50 rounded-xl mb-4">
-                            <span class="text-4xl weight-black text-red-500 uppercase">BLUE</span>
+
+                <!-- INTERACTIVE STROOP TEST -->
+                <div class="lg:col-span-6">
+                    <div class="bg-white p-10 rounded-3xl border-2 border-gravity-lime/30 shadow-xl text-center min-h-[400px] flex flex-col justify-center transition-all duration-500">
+                        <div id="stroop-intro">
+                            <h4 class="weight-black text-gravity-navy mb-4 font-heading uppercase text-sm tracking-widest">Diagnostic Exercise</h4>
+                            <p class="text-sm text-slate-500 mb-8 leading-relaxed">Let's see your System 1 in action. We're going to show you words on the screen.</p>
+                            <button onclick="startStroop()" class="bg-gravity-navy text-white px-8 py-3 rounded-full text-xs weight-black uppercase tracking-widest hover:bg-gravity-lime transition-all">Begin Exercise</button>
                         </div>
-                        <p class="text-[11px] text-slate-400">Discussion: Your System 1 read "BLUE" instantly. Your System 2 had to fight to identify the color. Interviewing is the same—ignoring "charm" to focus on "skill" takes cognitive energy.</p>
+
+                        <div id="stroop-step-1" class="hidden">
+                            <p class="text-xs weight-bold text-slate-400 uppercase tracking-widest mb-6">Phase 1: Easy Mode</p>
+                            <h2 class="text-6xl weight-black text-red-500 uppercase font-heading mb-8">RED</h2>
+                            <p class="text-sm text-slate-500 mb-6 italic">Instruction: Say the COLOR of the text out loud.</p>
+                            <button onclick="nextStroop(2)" class="text-gravity-lime weight-black uppercase text-[10px] tracking-widest underline">Next Phase</button>
+                        </div>
+
+                        <div id="stroop-step-2" class="hidden">
+                            <p class="text-xs weight-bold text-slate-400 uppercase tracking-widest mb-6">Phase 2: Add Noise</p>
+                            <h2 class="text-6xl weight-black text-red-500 uppercase font-heading mb-8">BLUE</h2>
+                            <p class="text-sm text-slate-500 mb-6 italic">Instruction: Say the COLOR of the text out loud (not the word).</p>
+                            <button onclick="nextStroop(3)" class="text-gravity-lime weight-black uppercase text-[10px] tracking-widest underline">Show Results</button>
+                        </div>
+
+                        <div id="stroop-step-3" class="hidden">
+                            <h4 class="weight-black text-gravity-navy mb-4 font-heading uppercase text-sm tracking-widest">The Results</h4>
+                            <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                                In Phase 1, the signal was clear. In Phase 2, the word "BLUE" was <strong>Noise</strong>. 
+                            </p>
+                            <div class="bg-slate-50 p-6 rounded-2xl text-left border border-slate-100 mb-6">
+                                <p class="text-[11px] text-slate-500 leading-relaxed italic">
+                                    Discussion: Your System 1 read "BLUE" automatically. Your System 2 had to fight to identify the color. Interviewing is the same—ignoring a "charming" vibe to focus on skill takes energy.
+                                </p>
+                            </div>
+                            <button onclick="resetStroop()" class="text-slate-400 weight-black uppercase text-[10px] tracking-widest">Restart</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -299,7 +327,7 @@
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-10">
                     <h3 class="text-3xl weight-black text-gravity-navy font-heading uppercase tracking-tight">The Operating System</h3>
-                    <p class="text-slate-500 mt-3 max-w-2xl mx-auto">Neuroscience suggests that up to 95% of our decisions are driven by subconscious patterns, not conscious logic.</p>
+                    <p class="text-slate-500 mt-3 max-w-2xl mx-auto">Neuroscience suggests up to 95% of our decisions are driven by subconscious patterns, not conscious logic.</p>
                 </div>
 
                 <div class="relative w-full h-40 bg-slate-100 rounded-2xl overflow-hidden flex shadow-lg border border-slate-200">
@@ -437,7 +465,7 @@
             <div class="text-center mb-20">
                 <h2 class="text-xs weight-bold text-gravity-lime tracking-[0.3em] uppercase mb-4">The Fix</h2>
                 <h3 class="text-5xl weight-black text-gravity-navy font-heading uppercase tracking-tighter">Use Scorecards</h3>
-                <p class="text-slate-500 max-w-2xl mx-auto mt-12 leading-relaxed">The roadmap to an A-Player. We focus on observable outcomes and competencies, not "vibes."</p>
+                <p class="text-slate-500 max-w-2xl mx-auto mt-12 leading-relaxed">The roadmap to high-performing talent. We focus on observable outcomes and competencies, not "vibes."</p>
             </div>
 
             <div class="p-12 bg-white rounded-[3rem] border border-slate-200 shadow-xl max-w-4xl mx-auto">
@@ -469,6 +497,7 @@
             progress.style.width = progressWidth + '%';
         });
 
+        /* --- Emoji Game --- */
         const gameData = [
             { prompt: "Thunder and ____", emoji: "⚡" },
             { prompt: "For dessert on my birthday, I had birthday ____", emoji: "🎂" },
@@ -532,6 +561,26 @@
             isFlipped = false;
             conclusionDiv.classList.add('hidden-game');
             introDiv.classList.remove('hidden');
+        }
+
+        /* --- Stroop Test Logic --- */
+        function startStroop() {
+            document.getElementById('stroop-intro').classList.add('hidden');
+            document.getElementById('stroop-step-1').classList.remove('hidden');
+        }
+
+        function nextStroop(step) {
+            document.getElementById('stroop-step-1').classList.add('hidden');
+            document.getElementById('stroop-step-2').classList.add('hidden');
+            document.getElementById('stroop-step-3').classList.add('hidden');
+            document.getElementById('stroop-step-' + step).classList.remove('hidden');
+        }
+
+        function resetStroop() {
+            document.getElementById('stroop-step-1').classList.add('hidden');
+            document.getElementById('stroop-step-2').classList.add('hidden');
+            document.getElementById('stroop-step-3').classList.add('hidden');
+            document.getElementById('stroop-intro').classList.remove('hidden');
         }
     </script>
 </body>
