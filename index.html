@@ -130,13 +130,15 @@
         .audit-card {
             background: white;
             border-left: 4px solid var(--gravity-navy);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 1rem;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
         }
         .audit-card:hover {
             border-left-color: var(--gravity-lime);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
         }
 
         .bias-card {
@@ -262,14 +264,14 @@
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-xs weight-bold text-gravity-lime tracking-[0.3em] uppercase mb-4">The Danger Zone</h2>
                 <h3 class="text-5xl weight-black text-gravity-navy mb-6 tracking-tight font-heading uppercase">The Gut Trap</h3>
-                <p class="text-slate-500 mb-4 italic">Common hiring shortcuts that distract us from high performance.</p>
+                <p class="text-slate-500 mb-4 italic">Recognizing the 10 common "Hiring Shortcuts" that distract us from high performance.</p>
             </div>
             
-            <!-- The Big 3 Traps -->
-            <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <!-- All 10 Shortcut Cards with unified design -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                 <div class="audit-card">
                     <h4 class="text-lg weight-black text-gravity-navy mb-2 uppercase font-heading">The Art Critic</h4>
-                    <p class="text-xs text-slate-500 leading-relaxed">Trusts their "gut" in the first 10 minutes. Usually just Affinity Bias masquerading as expertise. Hiring a mirror instead of a talent.</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">Trusts their "gut" in the first 10 minutes. Usually just Affinity Bias masquerading as expertise. You're hiring a mirror, not a talent.</p>
                 </div>
                 <div class="audit-card">
                     <h4 class="text-lg weight-black text-gravity-navy mb-2 uppercase font-heading">The Sponge</h4>
@@ -279,47 +281,40 @@
                     <h4 class="text-lg weight-black text-gravity-navy mb-2 uppercase font-heading">The Chatterbox</h4>
                     <p class="text-xs text-slate-500 leading-relaxed">The "Seller." They spend the whole call selling Gravity, hiring the candidate because they were a good <em>listener</em>.</p>
                 </div>
-            </div>
-
-            <!-- Full Gallery of remaining 7 shortcuts -->
-            <div class="text-center mb-10">
-                <h4 class="text-xs weight-black text-slate-400 uppercase tracking-widest mb-6">— The Shortcut Gallery —</h4>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                        <h5 class="text-xs weight-black text-gravity-navy uppercase mb-2">The Prosecutor</h5>
-                        <p class="text-[10px] text-slate-400 leading-tight">Actively looking for flaws only. Trying to "break" the candidate instead of evaluating their score.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                        <h5 class="text-xs weight-black text-gravity-navy uppercase mb-2">The Fortune Teller</h5>
-                        <p class="text-[10px] text-slate-400 leading-tight">Asking "What would you do if...?" (Hypotheticals). People give great answers to imaginary problems.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                        <h5 class="text-xs weight-black text-gravity-navy uppercase mb-2">The Animal Lover</h5>
-                        <p class="text-[10px] text-slate-400 leading-tight">Hiring based on a "feeling" of hunger or grit without specific behavioral proof.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                        <h5 class="text-xs weight-black text-gravity-navy uppercase mb-2">The Armchair Psych</h5>
-                        <p class="text-[10px] text-slate-400 leading-tight">Trying to read "body language" or hidden meanings instead of their track record.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                        <h5 class="text-xs weight-black text-gravity-navy uppercase mb-2">The Aptitude Tester</h5>
-                        <p class="text-[10px] text-slate-400 leading-tight">Only cares if they can do the technical job, ignoring soft skills or contribution potential.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                        <h5 class="text-xs weight-black text-gravity-navy uppercase mb-2">The Genealogist</h5>
-                        <p class="text-[10px] text-slate-400 leading-tight">Hiring the employer brand ("They worked at Google!") instead of the person.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                        <h5 class="text-xs weight-black text-gravity-navy uppercase mb-2">The Inquisitor</h5>
-                        <p class="text-[10px] text-slate-400 leading-tight">Asking weird brain-teasers that have nothing to do with the actual work required.</p>
-                    </div>
+                <div class="audit-card">
+                    <h4 class="text-lg weight-black text-gravity-navy mb-2 uppercase font-heading">The Prosecutor</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Actively looking for flaws only. Trying to "break" the candidate instead of evaluating their actual score on competencies.</p>
+                </div>
+                <div class="audit-card">
+                    <h4 class="text-lg weight-black text-gravity-navy mb-2 uppercase font-heading">The Fortune Teller</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Focuses on "What would you do if...?" (Hypotheticals). People give great answers to imaginary problems.</p>
+                </div>
+                <div class="audit-card">
+                    <h4 class="text-lg weight-black text-gravity-navy mb-2 uppercase font-heading">The Animal Lover</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Hiring based on a "feeling" of hunger or grit without specific behavioral proof or direct past evidence.</p>
+                </div>
+                <div class="audit-card">
+                    <h4 class="text-lg weight-black text-gravity-navy mb-2 uppercase font-heading">The Armchair Psych</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Trying to read "body language" or looking for hidden psychological meanings instead of checking their track record.</p>
+                </div>
+                <div class="audit-card">
+                    <h4 class="text-lg weight-black text-gravity-navy mb-2 uppercase font-heading">The Aptitude Tester</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Only cares if they can do the technical job today, ignoring soft skills, curiosity, or long-term contribution potential.</p>
+                </div>
+                <div class="audit-card">
+                    <h4 class="text-lg weight-black text-gravity-navy mb-2 uppercase font-heading">The Genealogist</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Hiring the employer brand ("They worked at Google!") instead of evaluating the person sitting in front of you.</p>
+                </div>
+                <div class="audit-card">
+                    <h4 class="text-lg weight-black text-gravity-navy mb-2 uppercase font-heading">The Inquisitor</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Asking weird brain-teasers or "gotcha" riddles that have nothing to do with the actual work required for the role.</p>
                 </div>
             </div>
 
             <div class="huddle-block max-w-2xl mx-auto text-center">
                 <span class="huddle-badge">The Recognition Poll</span>
-                <p class="text-sm font-bold text-amber-900 mb-4 font-heading uppercase">Recognizing the Shortcuts</p>
-                <p class="text-amber-800 text-sm italic">"React with an emoji if you've seen one of these play out in a real debrief. What did it look like? How did it steer the conversation away from evidence?"</p>
+                <p class="text-sm font-bold text-amber-900 mb-4 font-heading uppercase">Identifying the Shortcuts</p>
+                <p class="text-amber-800 text-sm italic">"React with an emoji if you've seen one of these shortcuts play out in a real debrief. What did it look like? How did it steer the team away from data?"</p>
             </div>
             <div class="text-center mt-8">
                 <span class="text-[10px] text-slate-400 uppercase tracking-widest italic">Research support from Geoff Smart's "Who"</span>
@@ -507,7 +502,7 @@
             </div>
         </section>
 
-        <!-- RESTORED: Section 6: Soft Skills & Competencies -->
+        <!-- Section 6: Soft Skills & Competencies -->
         <section id="softskills" class="py-32 bg-pattern">
             <div class="text-center mb-20 px-8">
                 <h2 class="text-xs weight-bold text-gravity-lime tracking-[0.3em] uppercase mb-4">Success Attributes</h2>
