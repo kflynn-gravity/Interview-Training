@@ -389,65 +389,96 @@
             </div>
 
             <!-- Voodoo Hiring Styles Section -->
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h3 class="text-3xl weight-black text-gravity-navy font-heading uppercase tracking-tight">"Voodoo" Hiring Styles</h3>
-                <p class="text-slate-500 mt-2">Common traps identified in the book <em>Who</em> by Geoff Smart and Randy Street.</p>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h3 class="text-3xl weight-black text-gravity-navy font-heading uppercase tracking-tight">"Voodoo" Hiring Styles</h3>
+            <p class="text-slate-500 mt-2">Common traps identified in the book <em>Who</em> by Geoff Smart and Randy Street.</p>
+            <p class="text-xs text-gravity-lime uppercase tracking-widest mt-4 font-bold">Click any card for deeper insight</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
+            <div onclick="openVoodooModal('fortuneTeller')" class="bg-white border-t-4 border-gravity-navy p-6 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-lg weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">The Fortune Teller</h4>
+                    <span class="text-2xl grayscale group-hover:grayscale-0 transition-all">🔮</span>
+                </div>
+                <p class="text-sm text-slate-600 mb-2">Asking hypothetical questions like, "What would you do if..."</p>
+                <p class="text-xs text-slate-400 italic">Why it fails: People give great answers to imaginary problems.</p>
             </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
-                <div class="bg-white border-t-4 border-gravity-navy p-6 rounded-2xl shadow-sm">
-                    <h4 class="text-lg weight-bold text-gravity-navy mb-2 font-heading uppercase">The Fortune Teller</h4>
-                    <p class="text-sm text-slate-600 mb-2">Asking hypothetical questions like, "What would you do if..."</p>
-                    <p class="text-xs text-slate-400 italic">Why it fails: People give great answers to imaginary problems. We need to know what they've actually done.</p>
+            <div onclick="openVoodooModal('artCritic')" class="bg-white border-t-4 border-gravity-lime p-6 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-lg weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">The Art Critic</h4>
+                    <span class="text-2xl grayscale group-hover:grayscale-0 transition-all">🎨</span>
                 </div>
-                <div class="bg-white border-t-4 border-gravity-lime p-6 rounded-2xl shadow-sm">
-                    <h4 class="text-lg weight-bold text-gravity-navy mb-2 font-heading uppercase">The Art Critic</h4>
-                    <p class="text-sm text-slate-600 mb-2">Judging based on "vibes" or feeling like you know the outcome in the first 5 minutes.</p>
-                    <p class="text-xs text-slate-400 italic">Why it fails: It is pure System 1. It ignores evidence in favor of intuition.</p>
-                </div>
-                <div class="bg-white border-t-4 border-red-500 p-6 rounded-2xl shadow-sm">
-                    <h4 class="text-lg weight-bold text-gravity-navy mb-2 font-heading uppercase">The Prosecutor</h4>
-                    <p class="text-sm text-slate-600 mb-2">Aggressively grilling candidates to poke holes in their story or counter a "nice" interviewer.</p>
-                    <p class="text-xs text-slate-400 italic">Why it fails: Shuts candidates down, making it impossible to assess true capability.</p>
-                </div>
-                <div class="bg-white border-t-4 border-gravity-navy p-6 rounded-2xl shadow-sm">
-                    <h4 class="text-lg weight-bold text-gravity-navy mb-2 font-heading uppercase">The Sponge</h4>
-                    <p class="text-sm text-slate-600 mb-2">Letting everyone else conduct the interview and just agreeing with their feedback.</p>
-                    <p class="text-xs text-slate-400 italic">Why it fails: Creates an echo chamber and fails to gather independent evidence.</p>
-                </div>
-                <div class="bg-white border-t-4 border-gravity-lime p-6 rounded-2xl shadow-sm">
-                    <h4 class="text-lg weight-bold text-gravity-navy mb-2 font-heading uppercase">The Suitor</h4>
-                    <p class="text-sm text-slate-600 mb-2">Spending the entire interview selling the candidate on the company.</p>
-                    <p class="text-xs text-slate-400 italic">Why it fails: You talk too much and gather zero evidence on the candidate's skills.</p>
-                </div>
-                <div class="bg-white border-t-4 border-red-500 p-6 rounded-2xl shadow-sm">
-                    <h4 class="text-lg weight-bold text-gravity-navy mb-2 font-heading uppercase">The Trickster</h4>
-                    <p class="text-sm text-slate-600 mb-2">Asking brain-teasers (e.g., "How many golf balls fit in a 747?").</p>
-                    <p class="text-xs text-slate-400 italic">Why it fails: Brain teasers don't predict job performance; they test parlor tricks.</p>
-                </div>
-                <div class="bg-white border-t-4 border-gravity-navy p-6 rounded-2xl shadow-sm">
-                    <h4 class="text-lg weight-bold text-gravity-navy mb-2 font-heading uppercase">The Animal Lover</h4>
-                    <p class="text-sm text-slate-600 mb-2">Asking stubborn pet questions ("What kind of tree would you be?").</p>
-                    <p class="text-xs text-slate-400 italic">Why it fails: Tests for bizarre psychological profiles instead of actual competencies.</p>
-                </div>
-                <div class="bg-white border-t-4 border-gravity-lime p-6 rounded-2xl shadow-sm">
-                    <h4 class="text-lg weight-bold text-gravity-navy mb-2 font-heading uppercase">The Chatterbox</h4>
-                    <p class="text-sm text-slate-600 mb-2">Treating the interview as a casual conversation about shared interests.</p>
-                    <p class="text-xs text-slate-400 italic">Why it fails: Breeds extreme Affinity Bias and leaves you with no professional data.</p>
-                </div>
-                <div class="bg-white border-t-4 border-red-500 p-6 rounded-2xl shadow-sm">
-                    <h4 class="text-lg weight-bold text-gravity-navy mb-2 font-heading uppercase">The Psychologist</h4>
-                    <p class="text-sm text-slate-600 mb-2">Playing amateur therapist and analyzing a candidate's deep personal motivations.</p>
-                    <p class="text-xs text-slate-400 italic">Why it fails: Interviewers aren't trained psychologists. This invites massive subjective bias.</p>
-                </div>
-                <div class="bg-white border-t-4 border-gravity-navy p-6 rounded-2xl shadow-sm">
-                    <h4 class="text-lg weight-bold text-gravity-navy mb-2 font-heading uppercase">The Tester</h4>
-                    <p class="text-sm text-slate-600 mb-2">Relying entirely on a test or assessment to make the hire without verification.</p>
-                    <p class="text-xs text-slate-400 italic">Why it fails: Assessments are tools, not complete pictures. They don't replace behavioral evidence.</p>
-                </div>
+                <p class="text-sm text-slate-600 mb-2">Judging based on "vibes" or feeling like you know the outcome in the first 5 minutes.</p>
+                <p class="text-xs text-slate-400 italic">Why it fails: It is pure System 1. It ignores evidence for intuition.</p>
             </div>
+            <div onclick="openVoodooModal('prosecutor')" class="bg-white border-t-4 border-red-500 p-6 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-lg weight-bold text-gravity-navy font-heading uppercase group-hover:text-red-500 transition-colors">The Prosecutor</h4>
+                    <span class="text-2xl grayscale group-hover:grayscale-0 transition-all">⚖️</span>
+                </div>
+                <p class="text-sm text-slate-600 mb-2">Aggressively grilling candidates to poke holes in their story or counter a "nice" interviewer.</p>
+                <p class="text-xs text-slate-400 italic">Why it fails: Shuts candidates down completely.</p>
+            </div>
+            <div onclick="openVoodooModal('sponge')" class="bg-white border-t-4 border-gravity-navy p-6 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-lg weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">The Sponge</h4>
+                    <span class="text-2xl grayscale group-hover:grayscale-0 transition-all">🧽</span>
+                </div>
+                <p class="text-sm text-slate-600 mb-2">Letting everyone else conduct the interview and just agreeing with their feedback.</p>
+                <p class="text-xs text-slate-400 italic">Why it fails: Creates an echo chamber without independent data.</p>
+            </div>
+            <div onclick="openVoodooModal('suitor')" class="bg-white border-t-4 border-gravity-lime p-6 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-lg weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">The Suitor</h4>
+                    <span class="text-2xl grayscale group-hover:grayscale-0 transition-all">💐</span>
+                </div>
+                <p class="text-sm text-slate-600 mb-2">Spending the entire interview selling the candidate on the company.</p>
+                <p class="text-xs text-slate-400 italic">Why it fails: You gather zero evidence on their skills.</p>
+            </div>
+            <div onclick="openVoodooModal('trickster')" class="bg-white border-t-4 border-red-500 p-6 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-lg weight-bold text-gravity-navy font-heading uppercase group-hover:text-red-500 transition-colors">The Trickster</h4>
+                    <span class="text-2xl grayscale group-hover:grayscale-0 transition-all">🃏</span>
+                </div>
+                <p class="text-sm text-slate-600 mb-2">Asking brain-teasers (e.g., "How many golf balls fit in a 747?").</p>
+                <p class="text-xs text-slate-400 italic">Why it fails: Brain teasers don't predict job performance.</p>
+            </div>
+            <div onclick="openVoodooModal('animalLover')" class="bg-white border-t-4 border-gravity-navy p-6 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-lg weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">The Animal Lover</h4>
+                    <span class="text-2xl grayscale group-hover:grayscale-0 transition-all">🐶</span>
+                </div>
+                <p class="text-sm text-slate-600 mb-2">Asking stubborn pet questions ("What kind of tree would you be?").</p>
+                <p class="text-xs text-slate-400 italic">Why it fails: Tests for bizarre profiles instead of competencies.</p>
+            </div>
+            <div onclick="openVoodooModal('chatterbox')" class="bg-white border-t-4 border-gravity-lime p-6 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-lg weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">The Chatterbox</h4>
+                    <span class="text-2xl grayscale group-hover:grayscale-0 transition-all">🗣️</span>
+                </div>
+                <p class="text-sm text-slate-600 mb-2">Treating the interview as a casual conversation about shared interests.</p>
+                <p class="text-xs text-slate-400 italic">Why it fails: Breeds extreme Affinity Bias.</p>
+            </div>
+            <div onclick="openVoodooModal('psychologist')" class="bg-white border-t-4 border-red-500 p-6 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-lg weight-bold text-gravity-navy font-heading uppercase group-hover:text-red-500 transition-colors">The Psychologist</h4>
+                    <span class="text-2xl grayscale group-hover:grayscale-0 transition-all">🛋️</span>
+                </div>
+                <p class="text-sm text-slate-600 mb-2">Playing amateur therapist and analyzing deep personal motivations.</p>
+                <p class="text-xs text-slate-400 italic">Why it fails: Invites massive subjective bias.</p>
+            </div>
+            <div onclick="openVoodooModal('tester')" class="bg-white border-t-4 border-gravity-navy p-6 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-lg weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">The Tester</h4>
+                    <span class="text-2xl grayscale group-hover:grayscale-0 transition-all">📝</span>
+                </div>
+                <p class="text-sm text-slate-600 mb-2">Relying entirely on a test or assessment to make the hire without verification.</p>
+                <p class="text-xs text-slate-400 italic">Why it fails: Assessments are tools, not the complete picture.</p>
+            </div>
+        </div>
 
-            <!-- Everyday Bias Traps -->
+        <!-- Everyday Bias Traps -->
             <div class="max-w-5xl mx-auto bg-slate-50 rounded-[3rem] p-12 border border-slate-200">
                 <div class="text-center mb-12">
                     <h3 class="text-3xl weight-black text-gravity-navy font-heading uppercase tracking-tight">Everyday Bias Traps</h3>
@@ -654,13 +685,39 @@
             </div>
 
             <!-- Closing -->
-            <div class="mt-20 text-center pb-20 uppercase font-heading">
-                <h2 class="text-6xl weight-black text-gravity-navy mb-8 tracking-tighter leading-tight">Objective Hiring is <br><span class="text-gravity-lime">High-Performance</span> Hiring.</h2>
-            </div>
-        </section>
-    </main>
+        <div class="mt-40 text-center pb-20 uppercase font-heading">
+            <h2 class="text-6xl weight-black text-gravity-navy mb-8 tracking-tighter leading-tight">Objective Hiring is <br><span class="text-gravity-lime">High-Performance</span> Hiring.</h2>
+        </div>
 
-    <footer class="bg-slate-900 text-white py-24 px-8 text-center">
+        <!-- Modal Overlay for Voodoo Insights -->
+        <div id="voodoo-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-900/70 backdrop-blur-sm transition-opacity p-4" onclick="if(event.target === this) closeVoodooModal()">
+            <div class="bg-white rounded-3xl p-10 max-w-2xl w-full mx-auto shadow-2xl relative transform transition-all scale-95" id="voodoo-modal-content">
+                <button onclick="closeVoodooModal()" class="absolute top-6 right-6 text-slate-400 hover:text-gravity-navy transition-colors">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+                <div class="flex items-center gap-4 mb-4">
+                    <div id="voodoo-modal-icon" class="w-16 h-16 bg-gravity-light rounded-full flex items-center justify-center text-3xl">🔮</div>
+                    <h4 id="voodoo-modal-title" class="text-3xl weight-black text-gravity-navy font-heading uppercase">Title</h4>
+                </div>
+                <p id="voodoo-modal-subtitle" class="text-lg text-slate-600 mb-6 border-b border-slate-100 pb-6 font-medium">Subtitle</p>
+                
+                <div class="space-y-4">
+                    <div class="bg-gravity-light p-6 rounded-2xl border-l-4 border-gravity-navy">
+                        <h5 class="text-xs weight-bold text-gravity-navy uppercase tracking-widest mb-2">Deeper Insight</h5>
+                        <p id="voodoo-modal-insight" class="text-slate-700 leading-relaxed text-sm">Insight goes here.</p>
+                    </div>
+                    
+                    <div class="bg-lime-50 p-6 rounded-2xl border-l-4 border-gravity-lime">
+                        <h5 class="text-xs weight-bold text-gravity-lime uppercase tracking-widest mb-2">How to Overcome It</h5>
+                        <p id="voodoo-modal-overcome" class="text-slate-700 leading-relaxed text-sm font-medium">Solution goes here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-slate-900 text-white py-24 px-8 text-center">
         <div class="max-w-7xl mx-auto opacity-80 uppercase tracking-widest text-xs">
             <p class="weight-medium text-slate-400">Internal Use Only | Unconscious Bias Training</p>
         </div>
@@ -709,15 +766,123 @@
                 cardInner.classList.add('flipped');
                 isFlipped = true;
             } else {
-                // Fade out/transition to next (simplified here as immediate load for smoothness)
-                // In a robust app, we might add a slide-out animation
+                // Fade out/transition to next
                 currentCardIndex++;
                 
-                // Small delay to allow the "mental reset" before next card
                 setTimeout(() => {
                     loadCard(currentCardIndex);
                 }, 200);
             }
+        }
+
+        // Voodoo Modal Logic
+        const voodooData = {
+            fortuneTeller: {
+                title: "The Fortune Teller",
+                icon: "🔮",
+                subtitle: "Asking hypothetical questions like, 'What would you do if...'",
+                insight: "Behavioral consistency is the best predictor of future performance. When you ask 'What would you do?', candidates give idealized, textbook answers. They tell you who they want to be, not who they actually are.",
+                overcome: "Shift to past-behavior. Instead of 'How would you handle a difficult client?', ask: 'Tell me about a specific time you had to handle an unreasonable client. What were the exact steps you took?'"
+            },
+            artCritic: {
+                title: "The Art Critic",
+                icon: "🎨",
+                subtitle: "Judging based on 'vibes' or feeling like you know the outcome in the first 5 minutes.",
+                insight: "This relies entirely on your brain's System 1 autopilot. It assumes you have a flawless 'gut instinct' for talent, which science disproves. This style heavily favors candidates who look, sound, and act exactly like you (Affinity Bias).",
+                overcome: "Use a structured rubric and adhere strictly to The Evidence Rule. Do not submit a score until the interview is over, and ensure every rating is backed by a direct quote or observed behavior."
+            },
+            prosecutor: {
+                title: "The Prosecutor",
+                icon: "⚖️",
+                subtitle: "Aggressively grilling candidates to poke holes in their story.",
+                insight: "Interviews shouldn't be interrogations. When a candidate's Amygdala is triggered by an aggressive interviewer, they enter 'fight or flight' mode. You aren't seeing their actual collaborative work persona; you're seeing their biological survival response.",
+                overcome: "Shift from interrogation to discovery. Instead of 'Why would you do it that way?', ask with genuine curiosity: 'Can you walk me through your thought process behind that decision?'"
+            },
+            sponge: {
+                title: "The Sponge",
+                icon: "🧽",
+                subtitle: "Letting everyone else conduct the interview and just agreeing with their feedback.",
+                insight: "This leads to severe Groupthink and allows the Halo/Horn effect from one loud interviewer to dominate the entire hiring panel. If you just agree with the hiring manager without providing your own evidence, your presence in the interview was redundant.",
+                overcome: "Write down your own scores and specific evidence BEFORE you discuss the candidate with the rest of the panel. Commit to sharing your independent data first."
+            },
+            suitor: {
+                title: "The Suitor",
+                icon: "💐",
+                subtitle: "Spending the entire interview selling the candidate on the company.",
+                insight: "Selling the company culture is important, but if you talk for 80% of the interview, you have successfully gathered zero data on the candidate. The candidate leaves feeling great, but you have no behavioral evidence.",
+                overcome: "Follow the 80/20 rule: the candidate should be talking 80% of the time. Save your sales pitch and company overview for the final 5-10 minutes of the conversation."
+            },
+            trickster: {
+                title: "The Trickster",
+                icon: "🃏",
+                subtitle: "Asking complex brain-teasers (e.g., 'How many golf balls fit in a 747?').",
+                insight: "Tech companies famously banned brain-teasers years ago because their data proved they do not correlate with job success. They only test a candidate's ability to solve parlor tricks and handle arbitrary stress.",
+                overcome: "Ask questions directly related to the competencies of the role. If they need to problem-solve, give them a real business scenario your team actually faced recently and ask how they would approach it."
+            },
+            animalLover: {
+                title: "The Animal Lover",
+                icon: "🐶",
+                subtitle: "Asking bizarre, irrelevant questions ('What kind of tree would you be?').",
+                insight: "Asking bizarre questions tells you absolutely nothing about a candidate's ability to drive results or communicate. It introduces wild subjectivity—you might unconsciously dock points because you secretly hate 'Oak trees'.",
+                overcome: "Stick to the core competencies. Replace abstract personality tests with targeted behavioral questions about how they collaborate, communicate, or drive results."
+            },
+            chatterbox: {
+                title: "The Chatterbox",
+                icon: "🗣️",
+                subtitle: "Treating the interview as a casual conversation about shared interests.",
+                insight: "Building rapport is fine for the first 3 minutes, but spending 30 minutes discussing a shared love of a sports team is pure Affinity Bias. You leave the room genuinely liking the person, but lacking any objective data about their ability.",
+                overcome: "Timebox your rapport building to the first 3 minutes. After that, politely transition and strictly follow your prepared interview guide to ensure you gather objective data."
+            },
+            psychologist: {
+                title: "The Psychologist",
+                icon: "🛋️",
+                subtitle: "Playing amateur therapist and analyzing a candidate's deep personal motivations.",
+                insight: "Trying to unpack a candidate's deep childhood motivations for why they want to be in their career is inappropriate and highly subjective. We are not trained psychologists.",
+                overcome: "Focus on the 'what' and 'how', not the deep 'why'. Ask about their professional accomplishments, actions taken, and measurable results rather than analyzing their underlying psyche."
+            },
+            tester: {
+                title: "The Tester",
+                icon: "📝",
+                subtitle: "Relying entirely on a test or assessment to make the hire without verification.",
+                insight: "Assessments (like code tests or the DiSC profile) are single data points, not the entire picture. They often lack context and can easily be influenced by the environment or test anxiety.",
+                overcome: "Use assessments as a starting point, not a final answer. Bring the results into the interview and ask the candidate to talk through their approach or thought process."
+            }
+        };
+
+        function openVoodooModal(id) {
+            const data = voodooData[id];
+            if (!data) return;
+
+            document.getElementById('voodoo-modal-title').textContent = data.title;
+            document.getElementById('voodoo-modal-icon').textContent = data.icon;
+            document.getElementById('voodoo-modal-subtitle').textContent = data.subtitle;
+            document.getElementById('voodoo-modal-insight').textContent = data.insight;
+            document.getElementById('voodoo-modal-overcome').textContent = data.overcome;
+
+            const modal = document.getElementById('voodoo-modal');
+            const modalContent = document.getElementById('voodoo-modal-content');
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Trigger animation
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeVoodooModal() {
+            const modal = document.getElementById('voodoo-modal');
+            const modalContent = document.getElementById('voodoo-modal-content');
+            
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }, 150); // wait for scale animation
         }
 
         window.addEventListener('scroll', () => {
