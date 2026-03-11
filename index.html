@@ -75,7 +75,16 @@
             padding-bottom: 120px; /* Account for presentation controls */
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            /* FIX: Removed justify-content: center which causes clipping on tall slides */
+        }
+        
+        /* FIX: New rule safely centers content but allows it to scroll fully if taller than the screen */
+        .slide > div {
+            margin-top: auto;
+            margin-bottom: auto;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            flex-shrink: 0;
         }
 
         /* Card interactive styles */
@@ -101,7 +110,10 @@
         /* 3D Card Flip Styles */
         .perspective-1000 { perspective: 1000px; }
         .preserve-3d { transform-style: preserve-3d; }
-        .backface-hidden { backface-visibility: hidden; }
+        .backface-hidden { 
+            backface-visibility: hidden; 
+            -webkit-backface-visibility: hidden; /* Added to prevent flickering in some browsers */
+        }
         .rotate-y-180 { transform: rotateY(180deg); }
         
         .game-card-inner {
@@ -373,62 +385,77 @@
                     <p class="text-xs text-slate-400 uppercase tracking-widest mt-2 font-bold">(Click any card for deeper insight)</p>
                 </div>
                 
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
                     <div onclick="openVoodooModal('fortuneTeller')" class="bg-white border-t-4 border-gravity-navy p-5 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300 group">
                         <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-base weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">The Fortune Teller</h4>
+                            <h4 class="text-sm weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">The Fortune Teller</h4>
                             <span class="text-xl grayscale group-hover:grayscale-0 transition-all">🔮</span>
                         </div>
                         <p class="text-xs text-slate-600 mb-1">Asking hypothetical questions ("What would you do...")</p>
                     </div>
                     <div onclick="openVoodooModal('artCritic')" class="bg-white border-t-4 border-gravity-lime p-5 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300 group">
                         <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-base weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">The Art Critic</h4>
+                            <h4 class="text-sm weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">The Art Critic</h4>
                             <span class="text-xl grayscale group-hover:grayscale-0 transition-all">🎨</span>
                         </div>
                         <p class="text-xs text-slate-600 mb-1">Judging based on "vibes" in the first 5 minutes.</p>
                     </div>
                     <div onclick="openVoodooModal('prosecutor')" class="bg-white border-t-4 border-red-500 p-5 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300 group">
                         <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-base weight-bold text-gravity-navy font-heading uppercase group-hover:text-red-500 transition-colors">The Prosecutor</h4>
+                            <h4 class="text-sm weight-bold text-gravity-navy font-heading uppercase group-hover:text-red-500 transition-colors">The Prosecutor</h4>
                             <span class="text-xl grayscale group-hover:grayscale-0 transition-all">⚖️</span>
                         </div>
                         <p class="text-xs text-slate-600 mb-1">Aggressively grilling candidates to poke holes.</p>
                     </div>
                     <div onclick="openVoodooModal('sponge')" class="bg-white border-t-4 border-gravity-navy p-5 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300 group">
                         <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-base weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">The Sponge</h4>
+                            <h4 class="text-sm weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">The Sponge</h4>
                             <span class="text-xl grayscale group-hover:grayscale-0 transition-all">🧽</span>
                         </div>
                         <p class="text-xs text-slate-600 mb-1">Letting everyone else conduct the interview.</p>
                     </div>
                     <div onclick="openVoodooModal('suitor')" class="bg-white border-t-4 border-gravity-lime p-5 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300 group">
                         <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-base weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">The Suitor</h4>
+                            <h4 class="text-sm weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">The Suitor</h4>
                             <span class="text-xl grayscale group-hover:grayscale-0 transition-all">💐</span>
                         </div>
                         <p class="text-xs text-slate-600 mb-1">Spending the whole time selling the company.</p>
                     </div>
                     <div onclick="openVoodooModal('trickster')" class="bg-white border-t-4 border-red-500 p-5 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300 group">
                         <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-base weight-bold text-gravity-navy font-heading uppercase group-hover:text-red-500 transition-colors">The Trickster</h4>
+                            <h4 class="text-sm weight-bold text-gravity-navy font-heading uppercase group-hover:text-red-500 transition-colors">The Trickster</h4>
                             <span class="text-xl grayscale group-hover:grayscale-0 transition-all">🃏</span>
                         </div>
                         <p class="text-xs text-slate-600 mb-1">Asking complex brain-teasers.</p>
                     </div>
                     <div onclick="openVoodooModal('animalLover')" class="bg-white border-t-4 border-gravity-navy p-5 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300 group">
                         <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-base weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">Animal Lover</h4>
+                            <h4 class="text-sm weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">Animal Lover</h4>
                             <span class="text-xl grayscale group-hover:grayscale-0 transition-all">🐶</span>
                         </div>
                         <p class="text-xs text-slate-600 mb-1">Asking bizarre pet questions ("What tree are you?").</p>
                     </div>
                     <div onclick="openVoodooModal('chatterbox')" class="bg-white border-t-4 border-gravity-lime p-5 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300 group">
                         <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-base weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">The Chatterbox</h4>
+                            <h4 class="text-sm weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">The Chatterbox</h4>
                             <span class="text-xl grayscale group-hover:grayscale-0 transition-all">🗣️</span>
                         </div>
                         <p class="text-xs text-slate-600 mb-1">Treating it as a casual conversation about hobbies.</p>
+                    </div>
+                    <!-- RESTORED: Psychologist and Tester -->
+                    <div onclick="openVoodooModal('psychologist')" class="bg-white border-t-4 border-red-500 p-5 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300 group">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-sm weight-bold text-gravity-navy font-heading uppercase group-hover:text-red-500 transition-colors">Psychologist</h4>
+                            <span class="text-xl grayscale group-hover:grayscale-0 transition-all">🛋️</span>
+                        </div>
+                        <p class="text-xs text-slate-600 mb-1">Playing amateur therapist with candidate.</p>
+                    </div>
+                    <div onclick="openVoodooModal('tester')" class="bg-white border-t-4 border-gravity-navy p-5 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300 group">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-sm weight-bold text-gravity-navy font-heading uppercase group-hover:text-gravity-lime transition-colors">The Tester</h4>
+                            <span class="text-xl grayscale group-hover:grayscale-0 transition-all">📝</span>
+                        </div>
+                        <p class="text-xs text-slate-600 mb-1">Relying entirely on an assessment without verification.</p>
                     </div>
                 </div>
             </div>
@@ -727,7 +754,7 @@
         const cards = [
             { prompt: "For dessert on my birthday, I had birthday ____", answer: "Cake", emoji: "🎂" },
             { prompt: "Peanut butter and ____", answer: "Jelly", emoji: "🍇" },
-            { prompt: "Salt and ____", answer: "Pepper", emoji: "🧂" },
+            { prompt: "Salt and ____", answer: "Pepper", emoji: "🌶️" },
             { prompt: "Macaroni and ____", answer: "Cheese", emoji: "🧀" }
         ];
 
@@ -736,7 +763,9 @@
 
         function startGame() {
             document.getElementById('start-screen').classList.add('hidden');
-            document.getElementById('active-card').classList.remove('hidden');
+            const activeCard = document.getElementById('active-card');
+            activeCard.classList.remove('hidden');
+            activeCard.style.opacity = '1';
             loadGameCard(0);
         }
 
@@ -759,13 +788,29 @@
 
         function handleCardClick() {
             const cardInner = document.getElementById('card-inner');
+            const activeCard = document.getElementById('active-card');
+
             if (!isGameFlipped) {
+                // Ensure transition is active for the flip
+                cardInner.style.transition = 'transform 0.6s';
                 cardInner.classList.add('flipped');
                 isGameFlipped = true;
             } else {
-                currentGameCardIndex++;
+                // Fade out to hide the text swap and snap-back
+                activeCard.style.transition = 'opacity 0.2s';
+                activeCard.style.opacity = '0';
+                
                 setTimeout(() => {
+                    currentGameCardIndex++;
+                    
+                    // Disable flip transition so it snaps back instantly while invisible
+                    cardInner.style.transition = 'none';
                     loadGameCard(currentGameCardIndex);
+                    
+                    // Fade back in smoothly
+                    setTimeout(() => {
+                        activeCard.style.opacity = '1';
+                    }, 50);
                 }, 200);
             }
         }
