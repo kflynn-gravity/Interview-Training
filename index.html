@@ -21,7 +21,6 @@
             font-weight: 400;
             color: var(--gravity-grey);
             background-color: white;
-            /* Lock the body so we only scroll horizontally or within slides */
             overflow: hidden; 
             margin: 0;
             padding: 0;
@@ -57,12 +56,11 @@
             background-color: rgba(255, 255, 255, 0.95);
         }
 
-        /* Presentation Mode Styles */
         #deck {
             display: flex;
             width: 100vw;
             height: 100vh;
-            overflow-x: hidden; /* Hide horizontal scrollbar, handled by JS */
+            overflow-x: hidden; 
             scroll-behavior: smooth;
         }
 
@@ -70,15 +68,13 @@
             flex: 0 0 100vw;
             width: 100vw;
             height: 100vh;
-            overflow-y: auto; /* Allow internal vertical scrolling if content is tall */
-            padding-top: 100px; /* Account for fixed nav */
-            padding-bottom: 120px; /* Account for presentation controls */
+            overflow-y: auto; 
+            padding-top: 100px; 
+            padding-bottom: 120px; 
             display: flex;
             flex-direction: column;
-            /* FIX: Removed justify-content: center which causes clipping on tall slides */
         }
         
-        /* FIX: New rule safely centers content but allows it to scroll fully if taller than the screen */
         .slide > div {
             margin-top: auto;
             margin-bottom: auto;
@@ -87,7 +83,6 @@
             flex-shrink: 0;
         }
 
-        /* Card interactive styles */
         .anatomy-card {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid #e2e8f0;
@@ -107,12 +102,11 @@
             display: block;
         }
 
-        /* 3D Card Flip Styles */
         .perspective-1000 { perspective: 1000px; }
         .preserve-3d { transform-style: preserve-3d; }
         .backface-hidden { 
             backface-visibility: hidden; 
-            -webkit-backface-visibility: hidden; /* Added to prevent flickering in some browsers */
+            -webkit-backface-visibility: hidden; 
         }
         .rotate-y-180 { transform: rotateY(180deg); }
         
@@ -128,7 +122,6 @@
         .weight-extrabold { font-weight: 800; }
         .weight-semibold { font-weight: 600; }
         
-        /* Hide scrollbar for neatness but keep functionality */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
@@ -139,18 +132,16 @@
 
     <div id="progress" class="progress-bar" style="width: 0%"></div>
 
-    <!-- Navigation (Fixed to top) -->
     <nav class="sticky-nav fixed top-0 w-full z-50 border-b border-slate-100 py-4 px-8">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="weight-black text-2xl tracking-tighter text-gravity-navy uppercase font-heading">
                 <img src="mainlogo.png" alt="Gravity Payments" class="h-10 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <span style="display:none;">GRAVITY PAYMENTS</span>
             </div>
-            <!-- Interactive Nav now acts as jump-to-slide buttons -->
             <div class="hidden md:flex gap-10 text-[11px] weight-extrabold uppercase tracking-widest text-slate-400">
                 <button onclick="goToSlide(1)" class="hover:text-gravity-lime transition-colors">Framework</button>
                 <button onclick="goToSlide(3)" class="hover:text-gravity-lime transition-colors">Biology</button>
-                <button onclick="goToSlide(5)" class="hover:text-gravity-lime transition-colors">Anatomy</button>
+                <button onclick="goToSlide(4)" class="hover:text-gravity-lime transition-colors">Anatomy</button>
                 <button onclick="goToSlide(6)" class="hover:text-gravity-lime transition-colors">Traps</button>
                 <button onclick="goToSlide(9)" class="hover:text-gravity-lime transition-colors">Workshop</button>
                 <button onclick="goToSlide(10)" class="hover:text-gravity-lime transition-colors">Strategy</button>
@@ -158,22 +149,19 @@
         </div>
     </nav>
 
-    <!-- THE DECK (Wraps all slides) -->
     <div id="deck">
 
-        <!-- Slide 0: Hero Section -->
         <header class="slide bg-pattern px-6 text-center relative">
             <div class="max-w-4xl mx-auto z-10">
                 <h1 class="text-6xl md:text-8xl weight-black mb-6 text-gravity-navy tracking-tighter leading-none font-heading uppercase">
                     THE <span class="text-gravity-lime">OBJECTIVE</span> <br>INTERVIEW
                 </h1>
                 <p class="text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto weight-light leading-relaxed">
-                    Awareness. Recognition. Accountability. <br>Navigating our natural shortcuts to build a better hiring process.
+                    Awareness. Recognition. Accountability. <br>Navigating our natural shortcuts to build a high-performance hiring process.
                 </p>
             </div>
         </header>
 
-        <!-- Slide 1: Objectives & Prep -->
         <section class="slide px-8">
             <div class="max-w-7xl mx-auto w-full">
                 <div class="bg-gravity-navy text-white rounded-[2rem] p-12 shadow-lg relative overflow-hidden">
@@ -203,7 +191,6 @@
             </div>
         </section>
 
-        <!-- Slide 2: Interactive Auto-Complete Game -->
         <section class="slide px-8">
             <div class="w-full max-w-2xl mx-auto">
                 <div class="text-center mb-10">
@@ -240,99 +227,48 @@
             </div>
         </section>
         
-        <!-- Slide 3: The Origin of Bias (Part 1) -->
         <section class="slide px-8">
-            <div class="max-w-7xl mx-auto w-full">
-                <div class="max-w-4xl mx-auto text-center mb-16">
+            <div class="max-w-7xl mx-auto w-full flex flex-col items-center">
+                <div class="text-center mb-8">
                     <h2 class="text-xs weight-bold text-gravity-lime tracking-[0.3em] uppercase mb-4">The Biology of Shortcuts</h2>
-                    <h3 class="text-4xl md:text-5xl weight-black text-gravity-navy mb-6 tracking-tight font-heading uppercase">Bias is Biology, Not a Failing</h3>
+                    <h3 class="text-4xl md:text-5xl weight-black text-gravity-navy tracking-tight font-heading uppercase">The Efficiency Gap</h3>
+                    <p class="text-slate-500 mt-2">Our brains process 11 million bits of data a second. To survive, we use dual-process theory.</p>
                 </div>
 
-                <div class="grid lg:grid-cols-12 gap-20">
-                    <div class="lg:col-span-6">
-                        <h3 class="text-3xl weight-black text-gravity-navy mb-6 leading-tight font-heading uppercase">The Cognitive Miser</h3>
-                        <p class="text-lg text-slate-600 mb-6 leading-relaxed">
-                            Biases are a natural part of human biology. Our brains process about 11 million bits of data per second, which is exhausting. To survive, the brain uses <strong>Dual Process Theory</strong>.
-                        </p>
-                        <p class="text-slate-600 mb-6">
-                            It relies on "System 1"—a fast, automatic engine—to make split-second associations (like Birthday = Cake). The issue isn't having the shortcut; the issue is <strong>not being aware of it</strong> when judging candidates.
-                        </p>
-                        <div class="bg-gravity-light p-8 rounded-2xl border-l-8 border-gravity-navy">
-                            <h4 class="weight-extrabold text-gravity-navy mb-2 uppercase text-xs tracking-widest">Scientific Basis</h4>
-                            <p class="text-sm italic text-slate-700">"System 1 operates automatically and quickly, with little or no effort and no sense of voluntary control."</p>
-                            <span class="citation">— Daniel Kahneman, Thinking, Fast and Slow</span>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-6 space-y-8">
-                        <div class="bg-white p-8 rounded-3xl border-2 border-gravity-lime/30 shadow-sm">
-                            <h4 class="weight-extrabold text-gravity-navy mb-4 font-heading uppercase text-sm tracking-widest">Workshop: The Stroop Test</h4>
-                            <p class="text-sm text-slate-600 mb-4">Say the <strong>COLOR</strong> of the text, not the word itself, as fast as possible:</p>
-                            <div class="text-center py-6 bg-slate-50 rounded-xl mb-4">
-                                <span class="text-4xl weight-black text-red-500 uppercase tracking-widest">BLUE</span>
-                            </div>
-                            <p class="text-[11px] text-slate-400 mb-6">Discussion: Your System 1 read the word automatically. You have to be accountable and force your brain (System 2) to find the color. We must do the exact same thing when judging a candidate's skills.</p>
-                            
-                            <div class="pt-6 border-t border-slate-100">
-                                <p class="text-xs weight-bold text-gravity-navy uppercase tracking-widest mb-2">The 10-Second Danger</p>
-                                <p class="text-sm text-slate-500">Research shows interviewers often make a hiring decision within the <strong>first 10 seconds</strong>. The remaining time is spent searching for evidence to confirm that initial bias.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Slide 4: Awareness & 95% -->
-        <section class="slide px-8 bg-slate-50">
-            <div class="max-w-7xl mx-auto w-full">
-                <!-- Awareness/Recognition/Accountability -->
-                <div class="grid md:grid-cols-3 gap-8 mb-24">
-                    <div class="bg-white p-8 rounded-3xl border-t-4 border-gravity-navy text-center shadow-sm">
-                        <h4 class="text-xl weight-black text-gravity-navy mb-3 font-heading uppercase">1. Awareness</h4>
-                        <p class="text-sm text-slate-600">Knowing that your brain is automatically trying to fill in the blanks about a candidate using past associations.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-3xl border-t-4 border-gravity-lime text-center shadow-sm">
-                        <h4 class="text-xl weight-black text-gravity-navy mb-3 font-heading uppercase">2. Recognition</h4>
-                        <p class="text-sm text-slate-600">Spotting it in the moment. Realizing, "I'm assuming they know this because of where they worked."</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-3xl border-t-4 border-gravity-navy text-center shadow-sm">
-                        <h4 class="text-xl weight-black text-gravity-navy mb-3 font-heading uppercase">3. Accountability</h4>
-                        <p class="text-sm text-slate-600">Actively choosing to bypass the shortcut and seek out <strong>factual information</strong> through follow-up questions.</p>
-                    </div>
-                </div>
-
-                <!-- 95/5 Visual Section -->
-                <div class="max-w-5xl mx-auto">
-                    <div class="text-center mb-10">
-                        <h3 class="text-3xl weight-black text-gravity-navy font-heading uppercase tracking-tight">The Unconscious Operating System</h3>
-                        <p class="text-slate-500 mt-3 max-w-2xl mx-auto">Neuroscience suggests that up to 95% of our decisions are driven by subconscious patterns, not conscious logic.</p>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Source: Dr. Gerald Zaltman, Harvard University</p>
-                    </div>
-
-                    <div class="relative w-full h-40 bg-white rounded-2xl overflow-hidden flex shadow-lg border border-slate-200">
-                        <div class="h-full bg-gravity-navy flex flex-col justify-center items-center text-white relative group transition-all duration-500 hover:bg-opacity-95" style="width: 95%">
-                            <span class="weight-black text-5xl md:text-7xl tracking-tighter opacity-10 group-hover:opacity-20 transition-opacity select-none">95%</span>
-                            <span class="text-xs uppercase tracking-[0.3em] opacity-40 absolute bottom-6 font-heading">Bias / Intuition / Autopilot</span>
-                        </div>
-                        <div class="h-full bg-gravity-lime relative flex items-center justify-center transition-all duration-500 hover:brightness-110" style="width: 5%">
-                            <div class="absolute inset-0 bg-white opacity-20 animate-pulse"></div>
+                <div class="flex flex-col md:flex-row w-full gap-6 h-full min-h-[50vh] max-w-6xl mx-auto">
+                    <div class="flex-1 bg-slate-50 rounded-3xl p-10 border border-slate-200 flex flex-col justify-center relative overflow-hidden">
+                        <h4 class="text-3xl weight-black text-slate-400 mb-2 font-heading uppercase">System 1</h4>
+                        <p class="text-sm weight-extrabold text-slate-500 uppercase tracking-widest mb-6 font-heading">Auto-Pilot / Fast</p>
+                        <p class="text-slate-600 leading-relaxed mb-6 text-sm">Requires almost zero energy. Relies on pattern-matching, immediate emotion, and "gut feelings."</p>
+                        <div class="bg-white p-6 rounded-2xl text-center shadow-sm border border-slate-100">
+                            <p class="text-[10px] text-slate-400 uppercase tracking-widest mb-2 font-bold">Stroop Test Reaction</p>
+                            <span class="text-3xl weight-black text-red-500 uppercase tracking-widest">BLUE</span>
+                            <p class="text-xs text-slate-500 mt-3 font-medium">Your brain automatically reads the word in a millisecond.</p>
                         </div>
                     </div>
 
-                    <div class="flex justify-end mt-6 relative">
-                        <div class="absolute -top-6 right-[2.5%] w-0.5 h-12 bg-gravity-lime"></div>
-                        <div class="w-72 text-right pt-2">
-                            <p class="text-gravity-lime weight-black text-2xl leading-none mb-2 font-heading uppercase">5% Conscious</p>
-                            <p class="text-sm text-slate-600 leading-relaxed border-r-4 border-gravity-lime pr-4">
-                                This is the <strong>Objective Zone</strong>. This is where accurate, evidence-based hiring decisions happen. We have to fight to stay here.
-                            </p>
+                    <div class="hidden md:flex items-center justify-center -mx-4 z-20">
+                        <div class="bg-white rounded-full p-4 shadow-lg border border-slate-100">
+                            <span class="text-xl font-black text-slate-300">VS</span>
+                        </div>
+                    </div>
+
+                    <div class="flex-[1.3] bg-gravity-navy text-white rounded-3xl p-10 border-b-8 border-gravity-lime flex flex-col justify-center relative shadow-2xl transform md:scale-105 z-10">
+                        <h4 class="text-4xl weight-black text-white mb-2 font-heading uppercase flex items-center gap-3">
+                            System 2 <span class="text-2xl">🧠</span>
+                        </h4>
+                        <p class="text-sm weight-extrabold text-gravity-lime uppercase tracking-widest mb-6 font-heading">The CEO / Manual Control</p>
+                        <p class="text-slate-300 leading-relaxed mb-8 text-base">Burns heavy mental energy. Relies on logic, critical thinking, and finding factual information. <strong>This is where accurate hiring happens.</strong></p>
+                        <div class="bg-white/10 p-6 rounded-2xl text-center border border-white/20 backdrop-blur-sm">
+                            <p class="text-[10px] text-gravity-lime uppercase tracking-widest mb-3 font-bold">Stroop Test Reaction</p>
+                            <p class="text-sm text-slate-200 mb-3">You have to hit the brakes and force yourself to say:</p>
+                            <span class="text-4xl weight-black text-red-400 uppercase tracking-widest">"RED"</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 5: Anatomy of Bias -->
         <section class="slide px-8">
             <div class="max-w-7xl mx-auto w-full">
                 <div class="text-center max-w-3xl mx-auto mb-20">
@@ -374,15 +310,67 @@
             </div>
         </section>
 
-        <!-- Slide 6: Voodoo Traps -->
         <section class="slide px-8 bg-slate-50">
             <div class="max-w-7xl mx-auto w-full">
-                <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="grid md:grid-cols-3 gap-8 mb-24">
+                    <div class="bg-white p-8 rounded-3xl border-t-4 border-gravity-navy text-center shadow-sm">
+                        <h4 class="text-xl weight-black text-gravity-navy mb-3 font-heading uppercase">1. Awareness</h4>
+                        <p class="text-sm text-slate-600">Knowing that your brain is automatically trying to fill in the blanks about a candidate using past associations.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl border-t-4 border-gravity-lime text-center shadow-sm">
+                        <h4 class="text-xl weight-black text-gravity-navy mb-3 font-heading uppercase">2. Recognition</h4>
+                        <p class="text-sm text-slate-600">Spotting it in the moment. Realizing, "I'm assuming they know this because of where they worked."</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl border-t-4 border-gravity-navy text-center shadow-sm">
+                        <h4 class="text-xl weight-black text-gravity-navy mb-3 font-heading uppercase">3. Accountability</h4>
+                        <p class="text-sm text-slate-600">Actively choosing to bypass the shortcut and seek out <strong>factual information</strong> through follow-up questions.</p>
+                    </div>
+                </div>
+
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-10">
+                        <h3 class="text-3xl weight-black text-gravity-navy font-heading uppercase tracking-tight">The Unconscious Operating System</h3>
+                        <p class="text-slate-500 mt-3 max-w-2xl mx-auto">Neuroscience suggests that up to 95% of our decisions are driven by subconscious patterns, not conscious logic.</p>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Source: Dr. Gerald Zaltman, Harvard University</p>
+                    </div>
+
+                    <div class="relative w-full h-40 bg-white rounded-2xl overflow-hidden flex shadow-lg border border-slate-200">
+                        <div class="h-full bg-gravity-navy flex flex-col justify-center items-center text-white relative group transition-all duration-500 hover:bg-opacity-95" style="width: 95%">
+                            <span class="weight-black text-5xl md:text-7xl tracking-tighter opacity-10 group-hover:opacity-20 transition-opacity select-none">95%</span>
+                            <span class="text-xs uppercase tracking-[0.3em] opacity-40 absolute bottom-6 font-heading">Bias / Intuition / Autopilot</span>
+                        </div>
+                        <div class="h-full bg-gravity-lime relative flex items-center justify-center transition-all duration-500 hover:brightness-110" style="width: 5%">
+                            <div class="absolute inset-0 bg-white opacity-20 animate-pulse"></div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end mt-6 relative">
+                        <div class="absolute -top-6 right-[2.5%] w-0.5 h-12 bg-gravity-lime"></div>
+                        <div class="w-72 text-right pt-2">
+                            <p class="text-gravity-lime weight-black text-2xl leading-none mb-2 font-heading uppercase">5% Conscious</p>
+                            <p class="text-sm text-slate-600 leading-relaxed border-r-4 border-gravity-lime pr-4">
+                                This is the <strong>Objective Zone</strong>. This is where accurate, evidence-based hiring decisions happen. We have to fight to stay here.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide px-8 bg-slate-50">
+            <div class="max-w-7xl mx-auto w-full">
+                <div class="text-center max-w-3xl mx-auto mb-8">
                     <h2 class="text-xs weight-bold text-gravity-lime tracking-[0.3em] uppercase mb-4">The Traps</h2>
-                    <h3 class="text-4xl md:text-5xl weight-black text-gravity-navy mb-6 tracking-tight font-heading uppercase">"Voodoo" Hiring Styles</h3>
-                    <p class="text-slate-600 text-lg mb-6">Common shortcuts identified in the book <em>Who</em> by Geoff Smart and Randy Street. <strong>Note: These traps are situational.</strong> The role you are hiring for, or the mood you are in, changes which trap you might fall into today.</p>
-                    <p class="text-sm text-gravity-lime uppercase tracking-widest font-bold">Write down the one you most closely identify with.</p>
-                    <p class="text-xs text-slate-400 uppercase tracking-widest mt-2 font-bold">(Click any card for deeper insight)</p>
+                    <h3 class="text-4xl md:text-5xl weight-black text-gravity-navy mb-4 tracking-tight font-heading uppercase">"Voodoo" Hiring Styles</h3>
+                    <p class="text-slate-600 text-base mb-6">Common shortcuts identified in the book <em>Who</em> by Geoff Smart and Randy Street. <strong>Note: These traps are situational.</strong> The role you are hiring for, or the mood you are in, changes which trap you might fall into today.</p>
+                </div>
+                
+                <div class="bg-gravity-navy text-white p-6 rounded-2xl mb-10 flex items-center gap-6 shadow-lg max-w-4xl mx-auto border-l-8 border-gravity-lime">
+                    <div class="text-4xl">🪞</div>
+                    <div>
+                        <h4 class="text-gravity-lime weight-black uppercase text-sm tracking-[0.2em] font-heading mb-1">Radical Self-Awareness</h4>
+                        <p class="text-base font-medium">Which one of these is YOUR default trap? Find it and write it down in your notes.</p>
+                    </div>
                 </div>
                 
                 <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -442,7 +430,6 @@
                         </div>
                         <p class="text-xs text-slate-600 mb-1">Treating it as a casual conversation about hobbies.</p>
                     </div>
-                    <!-- RESTORED: Psychologist and Tester -->
                     <div onclick="openVoodooModal('psychologist')" class="bg-white border-t-4 border-red-500 p-5 rounded-2xl shadow-sm cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300 group">
                         <div class="flex justify-between items-start mb-2">
                             <h4 class="text-sm weight-bold text-gravity-navy font-heading uppercase group-hover:text-red-500 transition-colors">Psychologist</h4>
@@ -461,7 +448,6 @@
             </div>
         </section>
 
-        <!-- Slide 7: Everyday Traps -->
         <section class="slide px-8">
             <div class="max-w-5xl mx-auto w-full">
                 <div class="text-center mb-12">
@@ -470,7 +456,6 @@
                 </div>
 
                 <div class="space-y-8">
-                    <!-- Trap 1 -->
                     <div class="flex flex-col md:flex-row gap-8 items-start border-b border-slate-200 pb-8">
                         <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center shrink-0 text-red-500">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path></svg>
@@ -483,7 +468,6 @@
                         </div>
                     </div>
 
-                    <!-- Trap 2 -->
                     <div class="flex flex-col md:flex-row gap-8 items-start border-b border-slate-200 pb-8">
                         <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center shrink-0 text-red-500">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
@@ -496,7 +480,6 @@
                         </div>
                     </div>
 
-                    <!-- Trap 3 -->
                     <div class="flex flex-col md:flex-row gap-8 items-start">
                         <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center shrink-0 text-red-500">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
@@ -514,7 +497,6 @@
             </div>
         </section>
 
-        <!-- Slide 8: The Exposure Audit -->
         <section class="slide px-8 bg-slate-50">
             <div class="max-w-5xl mx-auto w-full">
                 <div class="text-center mb-16">
@@ -543,51 +525,60 @@
             </div>
         </section>
 
-        <!-- Slide 9: Workshop (Interpretation Gap) -->
         <section class="slide px-8">
             <div class="max-w-6xl mx-auto w-full">
                 <div class="text-center mb-16">
                     <h2 class="text-xs weight-bold text-gravity-lime tracking-[0.3em] uppercase mb-4">Interactive Workshop</h2>
                     <h3 class="text-5xl weight-black text-gravity-navy mb-6 tracking-tight font-heading uppercase">The Interpretation Gap</h3>
-                    <p class="text-slate-500">How one question creates multiple realities, and how follow-up questions bring us back to factual information.</p>
+                    <p class="text-slate-500">How one question creates multiple realities, and how follow-up questions bring us back to facts.</p>
                 </div>
 
-                <div class="bg-gravity-light p-12 rounded-[3rem] border-t-8 border-gravity-navy">
+                <div class="bg-gravity-light p-12 rounded-[3rem] border-t-8 border-gravity-navy relative">
                     <div class="max-w-4xl mx-auto">
+                        
                         <h4 class="text-xl weight-black text-gravity-navy mb-4 font-heading uppercase text-center">The Prompt</h4>
                         <div class="bg-white p-8 rounded-2xl shadow-sm text-center mb-10 border border-slate-200">
-                            <p class="text-2xl italic text-slate-700 weight-medium">"Tell me about a time you showed scrappiness."</p>
+                            <p class="text-2xl italic text-slate-700 weight-medium mb-3">"Tell me about a time you showed scrappiness."</p>
+                            <p class="text-sm font-bold text-slate-400 uppercase tracking-widest">— OR —</p>
+                            <p class="text-2xl italic text-slate-700 weight-medium mt-3">"Tell me how you act like a CEO."</p>
                         </div>
 
-                        <div class="grid md:grid-cols-2 gap-8 mb-10">
-                            <div class="bg-white p-8 rounded-2xl shadow-sm">
-                                <h5 class="text-sm weight-extrabold text-red-500 uppercase tracking-widest mb-3">The Candidate Hears:</h5>
-                                <ul class="text-sm text-slate-600 space-y-3">
-                                    <li>• "Tell me about a time you worked 80 hours."</li>
-                                    <li>• "Tell me about a time you had zero budget."</li>
-                                    <li>• "Tell me about a time you broke the rules."</li>
-                                </ul>
+                        <div class="text-center mb-8">
+                            <button onclick="toggleInterpretation()" class="px-8 py-3 bg-gravity-navy text-white font-bold uppercase tracking-widest text-sm rounded-full hover:bg-gravity-lime transition-colors shadow-md">
+                                Reveal The Gap
+                            </button>
+                        </div>
+
+                        <div id="interpretation-reveal" class="hidden transition-all duration-500 opacity-0">
+                            <div class="grid md:grid-cols-2 gap-8 mb-10">
+                                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-red-500">
+                                    <h5 class="text-sm weight-extrabold text-red-500 uppercase tracking-widest mb-3">The Candidate Hears:</h5>
+                                    <ul class="text-sm text-slate-600 space-y-3">
+                                        <li>• "Tell me about a time you worked 80 hours."</li>
+                                        <li>• "Tell me about a time you had zero budget."</li>
+                                        <li>• "Tell me about a time you broke the rules."</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-gravity-lime">
+                                    <h5 class="text-sm weight-extrabold text-gravity-lime uppercase tracking-widest mb-3">The Fix: Verifying Questions</h5>
+                                    <p class="text-sm text-slate-600 mb-3">When you hear an answer based on interpretation, <strong>do not assume</strong>. Dig for factual information.</p>
+                                    <ul class="text-sm italic text-slate-700 space-y-2">
+                                        <li>"What were the specific constraints?"</li>
+                                        <li>"Walk me through the exact steps you took."</li>
+                                        <li>"Who exactly did you collaborate with on that?"</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-gravity-lime">
-                                <h5 class="text-sm weight-extrabold text-gravity-lime uppercase tracking-widest mb-3">The Fix: Verifying Questions</h5>
-                                <p class="text-sm text-slate-600 mb-3">When you hear an answer based on interpretation, <strong>do not assume</strong> you know what they mean. Dig for factual information.</p>
-                                <ul class="text-sm italic text-slate-700 space-y-2">
-                                    <li>"What were the specific constraints?"</li>
-                                    <li>"Walk me through the steps you took."</li>
-                                    <li>"Who exactly did you collaborate with on that?"</li>
-                                </ul>
+                            <div class="text-center">
+                                <p class="text-lg text-slate-700 font-medium leading-relaxed"><strong>Curiosity is how we break out of the traps.</strong> We replace assumptions with factual information.</p>
                             </div>
                         </div>
 
-                        <div class="text-center">
-                            <p class="text-lg text-slate-700 font-medium leading-relaxed"><strong>Follow-up questions are how we break out of the traps.</strong> They force us to replace our assumptions with factual information.</p>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 10: Strategy & Factual Info -->
         <section class="slide px-8 bg-slate-50">
             <div class="max-w-5xl mx-auto w-full">
                 <div class="text-center mb-16">
@@ -596,7 +587,6 @@
                     <p class="text-slate-500 max-w-2xl mx-auto leading-relaxed">We bypass our natural shortcuts by grounding our decisions in observable, factual evidence.</p>
                 </div>
 
-                <!-- Gravity Soft Skills -->
                 <div class="bg-white p-12 border border-slate-100 rounded-[3rem] shadow-sm mb-12">
                     <h4 class="text-2xl weight-black text-gravity-navy mb-6 font-heading uppercase text-center">Gravity's Soft Skill Focus</h4>
                     <p class="text-slate-500 text-center mb-8 text-sm">Competencies are the specific "Brake Pedal" that forces the Prefrontal Cortex to take over. When we focus on these, we stop evaluating "vibes".</p>
@@ -626,11 +616,9 @@
             </div>
         </section>
 
-        <!-- Slide 11: Evidence Rule & CTA -->
         <section class="slide px-8">
             <div class="max-w-5xl mx-auto w-full">
                 
-                <!-- The Evidence Rule -->
                 <div class="p-12 bg-gravity-light rounded-[3rem] border-t-8 border-gravity-lime shadow-sm mb-16">
                     <h4 class="text-2xl weight-black text-gravity-navy mb-5 font-heading uppercase text-center">The Evidence Rule</h4>
                     <p class="text-slate-600 leading-relaxed weight-regular text-sm text-center max-w-2xl mx-auto mb-8">
@@ -641,7 +629,6 @@
                     </div>
                 </div>
 
-                <!-- New CTA Section -->
                 <div class="p-16 bg-gravity-navy text-white rounded-[3rem] shadow-xl relative overflow-hidden">
                     <div class="relative z-10 text-center">
                         <h4 class="text-3xl weight-black text-gravity-lime mb-6 font-heading uppercase tracking-tight">Accountability: Leave With A Plan</h4>
@@ -656,20 +643,28 @@
             </div>
         </section>
 
-        <!-- Slide 12: Closing -->
-        <section class="slide px-8 bg-slate-900 text-white flex-col">
-            <div class="max-w-4xl mx-auto w-full text-center flex-grow flex flex-col justify-center">
-                <h2 class="text-6xl md:text-8xl weight-black text-white mb-8 tracking-tighter leading-tight font-heading uppercase">
+        <section class="slide px-8 bg-gravity-navy text-white flex-col">
+            <div class="max-w-5xl mx-auto w-full flex-grow flex flex-col justify-center">
+                
+                <h2 class="text-6xl md:text-8xl weight-black text-white mb-10 tracking-tighter leading-tight font-heading uppercase">
                     Objective Hiring is <br><span class="text-gravity-lime">High-Performance</span> Hiring.
                 </h2>
-                <p class="weight-medium text-slate-400 mt-12 uppercase tracking-widest text-xs">Internal Use Only | Unconscious Bias Training</p>
+                
+                <div class="bg-white/5 border-l-8 border-gravity-lime p-8 md:p-10 rounded-r-3xl text-left backdrop-blur-sm shadow-xl">
+                    <p class="text-2xl md:text-4xl text-slate-200 font-light italic leading-relaxed mb-6">
+                        "Bias isn't just a diversity issue; it's an efficiency issue. If we hire on vibes, we lose A-players and waste money."
+                    </p>
+                    <p class="text-gravity-lime font-bold uppercase tracking-widest text-sm">— The Cost of System 1</p>
+                </div>
+
+                <div class="mt-20 border-t border-slate-700 pt-8 flex justify-between items-center opacity-50">
+                    <img src="mainlogo.png" alt="Gravity" class="h-8 w-auto brightness-0 invert" onerror="this.style.display='none';">
+                    <p class="weight-medium uppercase tracking-widest text-[10px]">Internal Use Only | Accuracy & Performance Training</p>
+                </div>
             </div>
         </section>
 
-    </div><!-- End Deck -->
-
-    <!-- Floating Presentation Navigation Controls -->
-    <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-slate-900/90 backdrop-blur-md text-white px-6 py-3 rounded-full flex items-center gap-6 z-50 shadow-2xl border border-slate-700">
+    </div><div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-slate-900/90 backdrop-blur-md text-white px-6 py-3 rounded-full flex items-center gap-6 z-50 shadow-2xl border border-slate-700">
         <button onclick="goToSlide(currentSlide - 1)" class="hover:text-gravity-lime transition-colors p-2" title="Previous Slide (Left Arrow)">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
         </button>
@@ -681,7 +676,6 @@
         </button>
     </div>
 
-    <!-- Modal Overlay for Voodoo Insights -->
     <div id="voodoo-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-900/70 backdrop-blur-sm transition-opacity p-4" onclick="if(event.target === this) closeVoodooModal()">
         <div class="bg-white rounded-3xl p-10 max-w-2xl w-full mx-auto shadow-2xl relative transform transition-all scale-95" id="voodoo-modal-content">
             <button onclick="closeVoodooModal()" class="absolute top-6 right-6 text-slate-400 hover:text-gravity-navy transition-colors">
@@ -713,7 +707,6 @@
         const slides = document.querySelectorAll('.slide');
         const deck = document.getElementById('deck');
         
-        // Initialize Total Slides count
         document.getElementById('slide-total').textContent = slides.length;
 
         function updateProgress() {
@@ -724,7 +717,6 @@
 
         function goToSlide(index) {
             if (index < 0 || index >= slides.length) return;
-            // Scroll the container horizontally
             deck.scrollTo({
                 left: slides[index].offsetLeft,
                 behavior: 'smooth'
@@ -733,10 +725,8 @@
             updateProgress();
         }
 
-        // Keyboard Navigation
         document.addEventListener('keydown', (e) => {
             if (document.getElementById('voodoo-modal').classList.contains('flex')) {
-                // If modal is open, let Escape close it, ignore slide changes
                 if (e.key === 'Escape') closeVoodooModal();
                 return; 
             }
@@ -749,6 +739,16 @@
                 goToSlide(currentSlide - 1);
             }
         });
+
+        // Interpretation Reveal Logic for Slide 9
+        function toggleInterpretation() {
+            const revealSection = document.getElementById('interpretation-reveal');
+            revealSection.classList.remove('hidden');
+            // Slight delay to allow display block to apply before animating opacity
+            setTimeout(() => {
+                revealSection.classList.remove('opacity-0');
+            }, 10);
+        }
 
         // Auto-Complete Game Logic
         const cards = [
@@ -791,23 +791,17 @@
             const activeCard = document.getElementById('active-card');
 
             if (!isGameFlipped) {
-                // Ensure transition is active for the flip
                 cardInner.style.transition = 'transform 0.6s';
                 cardInner.classList.add('flipped');
                 isGameFlipped = true;
             } else {
-                // Fade out to hide the text swap and snap-back
                 activeCard.style.transition = 'opacity 0.2s';
                 activeCard.style.opacity = '0';
                 
                 setTimeout(() => {
                     currentGameCardIndex++;
-                    
-                    // Disable flip transition so it snaps back instantly while invisible
                     cardInner.style.transition = 'none';
                     loadGameCard(currentGameCardIndex);
-                    
-                    // Fade back in smoothly
                     setTimeout(() => {
                         activeCard.style.opacity = '1';
                     }, 50);
@@ -924,7 +918,6 @@
             }, 150);
         }
         
-        // Run updateProgress on load
         updateProgress();
     </script>
 </body>
