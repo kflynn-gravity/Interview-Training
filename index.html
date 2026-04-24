@@ -297,19 +297,44 @@
                     </p>
                 </div>
                 <!-- Grid -->
-                <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
-                    <div onclick="openVoodooModal('fortuneTeller')" class="bg-white p-4 rounded-xl border-t-4 border-gravity-navy shadow-sm cursor-pointer hover:scale-105 transition-transform"><h5 class="text-[10px] font-black uppercase font-heading">Fortune Teller</h5><span class="text-xl">🔮</span></div>
-                    <div onclick="openVoodooModal('artCritic')" class="bg-white p-4 rounded-xl border-t-4 border-gravity-lime shadow-sm cursor-pointer hover:scale-105 transition-transform"><h5 class="text-[10px] font-black uppercase font-heading">Art Critic</h5><span class="text-xl">🎨</span></div>
-                    <div onclick="openVoodooModal('prosecutor')" class="bg-white p-4 rounded-xl border-t-4 border-red-500 shadow-sm cursor-pointer hover:scale-105 transition-transform"><h5 class="text-[10px] font-black uppercase font-heading">Prosecutor</h5><span class="text-xl">⚖️</span></div>
-                    <div onclick="openVoodooModal('sponge')" class="bg-white p-4 rounded-xl border-t-4 border-gravity-navy shadow-sm cursor-pointer hover:scale-105 transition-transform"><h5 class="text-[10px] font-black uppercase font-heading">Sponge</h5><span class="text-xl">🧽</span></div>
-                    <div onclick="openVoodooModal('suitor')" class="bg-white p-4 rounded-xl border-t-4 border-gravity-lime shadow-sm cursor-pointer hover:scale-105 transition-transform"><h5 class="text-[10px] font-black uppercase font-heading">Suitor</h5><span class="text-xl">💐</span></div>
-                    <div onclick="openVoodooModal('trickster')" class="bg-white p-4 rounded-xl border-t-4 border-red-500 shadow-sm cursor-pointer hover:scale-105 transition-transform"><h5 class="text-[10px] font-black uppercase font-heading">Trickster</h5><span class="text-xl">🃏</span></div>
-                    <div onclick="openVoodooModal('animalLover')" class="bg-white p-4 rounded-xl border-t-4 border-gravity-navy shadow-sm cursor-pointer hover:scale-105 transition-transform"><h5 class="text-[10px] font-black uppercase font-heading">Animal Lover</h5><span class="text-xl">🐶</span></div>
-                    <div onclick="openVoodooModal('chatterbox')" class="bg-white p-4 rounded-xl border-t-4 border-gravity-lime shadow-sm cursor-pointer hover:scale-105 transition-transform"><h5 class="text-[10px] font-black uppercase font-heading">Chatterbox</h5><span class="text-xl">🗣️</span></div>
-                    <div onclick="openVoodooModal('psychologist')" class="bg-white p-4 rounded-xl border-t-4 border-red-500 shadow-sm cursor-pointer hover:scale-105 transition-transform"><h5 class="text-[10px] font-black uppercase font-heading">Psychologist</h5><span class="text-xl">🛋️</span></div>
-                    <div onclick="openVoodooModal('tester')" class="bg-white p-4 rounded-xl border-t-4 border-gravity-navy shadow-sm cursor-pointer hover:scale-105 transition-transform"><h5 class="text-[10px] font-black uppercase font-heading">The Tester</h5><span class="text-xl">📝</span></div>
+               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+                    <div onclick="openVoodooModal('fortuneTeller')" class="bg-white p-4 rounded-xl border-l-4 border-gravity-navy shadow-sm cursor-pointer hover:scale-105 transition-transform">
+                        <h5 class="text-[11px] font-black uppercase font-heading flex items-center gap-2">🔮 Fortune Teller</h5>
+                        <p class="text-[10px] text-slate-600 mt-1">Asks "What would you do?" leading to idealized, textbook answers instead of past facts.</p>
+                    </div>
+                    <div onclick="openVoodooModal('artCritic')" class="bg-white p-4 rounded-xl border-l-4 border-gravity-lime shadow-sm cursor-pointer hover:scale-105 transition-transform">
+                        <h5 class="text-[11px] font-black uppercase font-heading flex items-center gap-2">🎨 Art Critic</h5>
+                        <p class="text-[10px] text-slate-600 mt-1">Decides on "vibes" in the first 5 mins. Assumes intuition is better than hard evidence.</p>
+                    </div>
+                    <div onclick="openVoodooModal('prosecutor')" class="bg-white p-4 rounded-xl border-l-4 border-red-500 shadow-sm cursor-pointer hover:scale-105 transition-transform">
+                        <h5 class="text-[11px] font-black uppercase font-heading flex items-center gap-2">⚖️ Prosecutor</h5>
+                        <p class="text-[10px] text-slate-600 mt-1">Aggressively grills to find flaws, triggering the candidate's flight-or-fight response.</p>
+                    </div>
+                    <div onclick="openVoodooModal('sponge')" class="bg-white p-4 rounded-xl border-l-4 border-gravity-navy shadow-sm cursor-pointer hover:scale-105 transition-transform">
+                        <h5 class="text-[11px] font-black uppercase font-heading flex items-center gap-2">🧽 Sponge</h5>
+                        <p class="text-[10px] text-slate-600 mt-1">Gathers no independent data; simply agrees with the loudest person in the room.</p>
+                    </div>
+                    <div onclick="openVoodooModal('suitor')" class="bg-white p-4 rounded-xl border-l-4 border-gravity-lime shadow-sm cursor-pointer hover:scale-105 transition-transform">
+                        <h5 class="text-[11px] font-black uppercase font-heading flex items-center gap-2">💐 Suitor</h5>
+                        <p class="text-[10px] text-slate-600 mt-1">Talks 80% of the time trying to "sell" the role instead of assessing the candidate.</p>
+                    </div>
+                    <div onclick="openVoodooModal('trickster')" class="bg-white p-4 rounded-xl border-l-4 border-red-500 shadow-sm cursor-pointer hover:scale-105 transition-transform">
+                        <h5 class="text-[11px] font-black uppercase font-heading flex items-center gap-2">🃏 Trickster</h5>
+                        <p class="text-[10px] text-slate-600 mt-1">Uses brain teasers or "stress tests" that don't actually predict job performance.</p>
+                    </div>
+                    <div onclick="openVoodooModal('animalLover')" class="bg-white p-4 rounded-xl border-l-4 border-gravity-navy shadow-sm cursor-pointer hover:scale-105 transition-transform">
+                        <h5 class="text-[11px] font-black uppercase font-heading flex items-center gap-2">🐶 Animal Lover</h5>
+                        <p class="text-[10px] text-slate-600 mt-1">Asks irrelevant personal questions that trigger wild subjectivity and bias.</p>
+                    </div>
+                    <div onclick="openVoodooModal('chatterbox')" class="bg-white p-4 rounded-xl border-l-4 border-gravity-lime shadow-sm cursor-pointer hover:scale-105 transition-transform">
+                        <h5 class="text-[11px] font-black uppercase font-heading flex items-center gap-2">🗣️ Chatterbox</h5>
+                        <p class="text-[10px] text-slate-600 mt-1">Bonds over shared hobbies for too long, hiring a "buddy" instead of an expert.</p>
+                    </div>
+                    <div onclick="openVoodooModal('psychologist')" class="bg-white p-4 rounded-xl border-l-4 border-red-500 shadow-sm cursor-pointer hover:scale-105 transition-transform">
+                        <h5 class="text-[11px] font-black uppercase font-heading flex items-center gap-2">🛋️ Psychologist</h5>
+                        <p class="text-[10px] text-slate-600 mt-1">Attempts to analyze deep personal trauma or motivations instead of professional results.</p>
+                    </div>
                 </div>
-            </div>
         </section>
 
         <!-- Slide 7: Everyday Traps -->
