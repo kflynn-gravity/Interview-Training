@@ -105,6 +105,24 @@
         
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+       @media print {
+            body, #deck {
+                overflow: visible !important;
+                height: auto !important;
+                display: block !important;
+            }
+            .slide {
+                page-break-after: always !important;
+                break-after: page !important;
+                height: 100vh !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+            }
+            nav, .progress-bar, #voodoo-modal, .fixed {
+                display: none !important; /* Hides top nav bar and floating slide controls */
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
